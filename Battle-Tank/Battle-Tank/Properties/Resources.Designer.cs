@@ -63,9 +63,9 @@ namespace Battle_Tank.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HorizontalWall {
+        internal static System.Drawing.Bitmap Scene1_BottomDecor {
             get {
-                object obj = ResourceManager.GetObject("HorizontalWall", resourceCulture);
+                object obj = ResourceManager.GetObject("Scene1_BottomDecor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,49 @@ namespace Battle_Tank.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap VerticalWall {
+        internal static System.Drawing.Bitmap Scene1_HorizontalWall {
             get {
-                object obj = ResourceManager.GetObject("VerticalWall", resourceCulture);
+                object obj = ResourceManager.GetObject("Scene1_HorizontalWall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Scene1_LeftDecor {
+            get {
+                object obj = ResourceManager.GetObject("Scene1_LeftDecor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Scene1_RightDecor {
+            get {
+                object obj = ResourceManager.GetObject("Scene1_RightDecor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Scene1_TopDecor {
+            get {
+                object obj = ResourceManager.GetObject("Scene1_TopDecor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Scene1_VerticalWall {
+            get {
+                object obj = ResourceManager.GetObject("Scene1_VerticalWall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

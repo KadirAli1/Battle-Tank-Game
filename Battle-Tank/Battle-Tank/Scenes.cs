@@ -20,22 +20,7 @@ namespace Battle_Tank
 
         private void CreateScenes(int Width, int Height)
         {
-            ScenesList.Add(CreateScene1(Width, Height));
-        }
-
-        private Scene CreateScene1(int Width, int Height)
-        {
-            int Rows = 7;
-            int Columns = 10;
-            int ColumnWidth = 90;
-            int RowHeight = 80;
-
-            Scene scene = new Scene(Rows, Columns, RowHeight, ColumnWidth , Width, Height, Color.FromArgb(224, 232, 235));
-
-            
-            
-
-            return scene;
+            ScenesList.Add(new Scene1(Width, Height));
         }
 
             

@@ -12,7 +12,11 @@ namespace Battle_Tank
     {
         public enum Direction{
             Vertical,
-            Horizontal
+            Horizontal,
+            DecorTop,
+            DecorRight,
+            DecorBottom,
+            DecorLeft
         };
         public Rectangle Rectangle { get; set; }
         public Direction Dir { get; set; }
@@ -25,20 +29,36 @@ namespace Battle_Tank
 
         public void Draw(Pen pen, Graphics g)
         {
-            if(Dir == Direction.Vertical)
+            if (Dir == Direction.Vertical)
             {
                 g.DrawRectangle(pen, Rectangle);
 
-                g.DrawImage(Resources.VerticalWall, Rectangle);
+                g.DrawImage(Resources.Scene1_VerticalWall, Rectangle);
+
+            }
+            else if (Dir == Direction.Horizontal)
+            {
+                g.DrawRectangle(pen, Rectangle);
                 
+                g.DrawImage(Resources.Scene1_HorizontalWall, Rectangle);
             }
-            else
+            else if (Dir == Direction.DecorTop)
             {
-                g.DrawRectangle(pen, Rectangle);
-
-                g.DrawImage(Resources.HorizontalWall, Rectangle);
+                g.DrawImage(Resources.Scene1_TopDecor, Rectangle);
             }
-            //g.DrawImage(Resources.Muri, First);
+            else if (Dir == Direction.DecorRight)
+            {
+                g.DrawImage(Resources.Scene1_RightDecor, Rectangle);
+            }
+            else if (Dir == Direction.DecorBottom)
+            {
+                g.DrawImage(Resources.Scene1_BottomDecor, Rectangle);
+            }
+            else if (Dir == Direction.DecorLeft) 
+            {
+                g.DrawImage(Resources.Scene1_LeftDecor, Rectangle);
+            }
+            
         }
     }
 }
