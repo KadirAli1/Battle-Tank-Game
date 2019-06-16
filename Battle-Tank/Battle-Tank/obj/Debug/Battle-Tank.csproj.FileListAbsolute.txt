@@ -1,0 +1,11 @@
+C:\Users\FisnikL\Documents\GitHub\Battle-Tank-Game\Battle-Tank\Battle-Tank\bin\Debug\Battle-Tank.exe.config
+C:\Users\FisnikL\Documents\GitHub\Battle-Tank-Game\Battle-Tank\Battle-Tank\bin\Debug\Battle-Tank.exe
+C:\Users\FisnikL\Documents\GitHub\Battle-Tank-Game\Battle-Tank\Battle-Tank\bin\Debug\Battle-Tank.pdb
+C:\Users\FisnikL\Documents\GitHub\Battle-Tank-Game\Battle-Tank\Battle-Tank\obj\Debug\Battle-Tank.csprojAssemblyReference.cache
+C:\Users\FisnikL\Documents\GitHub\Battle-Tank-Game\Battle-Tank\Battle-Tank\obj\Debug\Battle_Tank.Properties.Resources.resources
+C:\Users\FisnikL\Documents\GitHub\Battle-Tank-Game\Battle-Tank\Battle-Tank\obj\Debug\Battle-Tank.csproj.GenerateResource.cache
+C:\Users\FisnikL\Documents\GitHub\Battle-Tank-Game\Battle-Tank\Battle-Tank\obj\Debug\Battle-Tank.csproj.CoreCompileInputs.cache
+C:\Users\FisnikL\Documents\GitHub\Battle-Tank-Game\Battle-Tank\Battle-Tank\obj\Debug\Battle-Tank.exe
+C:\Users\FisnikL\Documents\GitHub\Battle-Tank-Game\Battle-Tank\Battle-Tank\obj\Debug\Battle-Tank.pdb
+C:\Users\FisnikL\Documents\GitHub\Battle-Tank-Game\Battle-Tank\Battle-Tank\obj\Debug\Battle_Tank.Form1.resources
+C:\Users\FisnikL\Documents\GitHub\Battle-Tank-Game\Battle-Tank\Battle-Tank\obj\Debug\Battle_Tank.SceneForm.resources
