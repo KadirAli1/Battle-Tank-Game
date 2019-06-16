@@ -9,28 +9,37 @@ namespace Battle_Tank
 {
     public class Scene
     {
-        public int X { get; set; }
+        public int RowHeight { get; set; }
+        public int ColumnWidth{ get; set; }
 
-        public int Y { get; set; }
+        public static int TOP;
+        public static int LEFT;
+        
+        public int Columns { get; set; }
+        public int Rows { get; set; }
+        //public int Width { get; set; }
+        //public int Height { get; set; }
+        public List<Wall> Walls { get; set; }
 
-        public int Width { get; set; }
-        public int Height { get; set; }
-        public List<Line> Lines { get; set; }
-
-        public Scene(int X, int Y, int Width, int Height)
+        public Color BackgroundColor { get; set; }
+        public Scene(int Rows, int Columns, int RowHeight, int ColumnWidth, int Width, int Height, Color Color)
         {
-            Lines = new List<Line>();
-            this.X = X;
-            this.Y = Y;
-            this.Width = Width;
-            this.Height = Height;
+            Walls = new List<Wall>();
+            this.Columns = Columns;
+            this.Rows = Rows;
+            this.RowHeight = RowHeight;
+            this.ColumnWidth = ColumnWidth;
+            TOP = 30;
+            LEFT = (Width - (Columns) * ColumnWidth) /2;
+            BackgroundColor = Color;
         }
 
         public void Draw(Pen pen, Graphics g)
         {
-            g.DrawRectangle(pen, X, Y, Width, Height);
+            Brush brush = new SolidBrush(BackgroundColor);
+            g.FillRectangle(brush, LEFT, TOP, Columns * ColumnWidth, Rows * RowHeight);
 
-            foreach(Line line in Lines)
+            foreach(Wall line in Walls)
             {
                 line.Draw(pen, g);
             }
