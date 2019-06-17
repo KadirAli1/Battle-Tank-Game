@@ -16,7 +16,7 @@ namespace Battle_Tank
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SceneForm());
+            Application.Run(new Form1());
         }
     }
 }
