@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="Scene1.cs" />
     <Compile Include="Scene2.cs" />
+    <Compile Include="Scene3.cs" />
     <Compile Include="Wall.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,6 +137,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Scene2_BottomRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scene3_InnerWallHorizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scene3_InnerWallVertical.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

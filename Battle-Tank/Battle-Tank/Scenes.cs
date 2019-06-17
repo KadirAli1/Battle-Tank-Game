@@ -20,7 +20,7 @@ namespace Battle_Tank
 
         private void CreateScenes(int Width, int Height)
         {
-            ScenesList.Add(new Scene2(Width, Height));
+            ScenesList.Add(new Scene3(Width, Height));
         }
 
             

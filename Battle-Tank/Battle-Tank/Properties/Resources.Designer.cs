@@ -199,5 +199,25 @@ namespace Battle_Tank.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Scene3_InnerWallHorizontal {
+            get {
+                object obj = ResourceManager.GetObject("Scene3_InnerWallHorizontal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Scene3_InnerWallVertical {
+            get {
+                object obj = ResourceManager.GetObject("Scene3_InnerWallVertical", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
