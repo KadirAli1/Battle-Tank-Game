@@ -140,14 +140,14 @@ namespace Battle_Tank
 
             // RIGHT
             int offset = 10;
-            Walls.Add(new Wall(new Rectangle(Scene.LEFT + 10 * ColumnWidth + 6, Scene.TOP + offset, 17, 270), Resources.Scene1_RightDecor));
-            Walls.Add(new Wall(new Rectangle(Scene.LEFT + 10 * ColumnWidth + 6, Scene.TOP + 1 * 270 + offset, 17, 270), Resources.Scene1_RightDecor));
+            Walls.Add(new Wall(new Rectangle(Scene.LEFT + Columns * ColumnWidth + 6, Scene.TOP + offset, 17, 270), Resources.Scene1_RightDecor));
+            Walls.Add(new Wall(new Rectangle(Scene.LEFT + Columns * ColumnWidth + 6, Scene.TOP + 1 * 270 + offset, 17, 270), Resources.Scene1_RightDecor));
 
             // BOTTOM
-            Walls.Add(new Wall(new Rectangle(Scene.LEFT + 0 * 270, Scene.TOP + 7 * RowHeight + 6, 270, 17), Resources.Scene1_BottomDecor));
-            Walls.Add(new Wall(new Rectangle(Scene.LEFT + 1 * 270, Scene.TOP + 7 * RowHeight + 6, 270, 17), Resources.Scene1_BottomDecor));
-            Walls.Add(new Wall(new Rectangle(Scene.LEFT + 2 * 270, Scene.TOP + 7 * RowHeight + 6, 270, 17), Resources.Scene1_BottomDecor));
-            Walls.Add(new Wall(new Rectangle(Scene.LEFT + 3 * 270, Scene.TOP + 7 * RowHeight + 6, 90, 17), Resources.Scene1_BottomDecor));
+            Walls.Add(new Wall(new Rectangle(Scene.LEFT + 0 * 270, Scene.TOP + Rows * RowHeight + 6, 270, 17), Resources.Scene1_BottomDecor));
+            Walls.Add(new Wall(new Rectangle(Scene.LEFT + 1 * 270, Scene.TOP + Rows * RowHeight + 6, 270, 17), Resources.Scene1_BottomDecor));
+            Walls.Add(new Wall(new Rectangle(Scene.LEFT + 2 * 270, Scene.TOP + Rows * RowHeight + 6, 270, 17), Resources.Scene1_BottomDecor));
+            Walls.Add(new Wall(new Rectangle(Scene.LEFT + 3 * 270, Scene.TOP + Rows * RowHeight + 6, 90, 17), Resources.Scene1_BottomDecor));
 
             // LEFT
             Walls.Add(new Wall(new Rectangle(Scene.LEFT - 17, Scene.TOP + offset, 17, 270), Resources.Scene1_LeftDecor));
