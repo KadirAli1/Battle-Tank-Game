@@ -53,10 +53,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rotate.cs" />
     <Compile Include="Scene1.cs" />
     <Compile Include="Scene2.cs" />
     <Compile Include="Scene3.cs" />
     <Compile Include="Scene6.cs" />
+    <Compile Include="TankMovements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TankMovements.Designer.cs">
+      <DependentUpon>TankMovements.cs</DependentUpon>
+    </Compile>
     <Compile Include="Wall.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,6 +90,9 @@
     </Compile>
     <EmbeddedResource Include="SceneForm.resx">
       <DependentUpon>SceneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TankMovements.resx">
+      <DependentUpon>TankMovements.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -144,6 +154,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Scene3_InnerWallVertical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tank.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
