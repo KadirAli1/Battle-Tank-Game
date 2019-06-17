@@ -26,8 +26,9 @@ namespace Battle_Tank
         private void SceneForm_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            g.Clear(Color.FromArgb(231, 239, 239));
-            Pen pen = new Pen(Color.Black, 1);
+            Color color = Scenes.ScenesList[0].BackgroundColor;
+            g.Clear(color);
+            Pen pen = new Pen(color, 1);
 
             //label1.Text = this.Width + " " + this.Height + "\n" +
             //    Scenes.ScenesList[0].X + " " + Scenes.ScenesList[0].Y;

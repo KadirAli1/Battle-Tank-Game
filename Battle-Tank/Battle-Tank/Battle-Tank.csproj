@@ -54,6 +54,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Scene1.cs" />
+    <Compile Include="Scene2.cs" />
     <Compile Include="Wall.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,6 +112,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Scene1_TopDecor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scene2_InnerWallHorizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scene2_InnerWallVertical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scene2_OuterWallHorizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scene2_OuterWallVertical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scene2_TopLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scene2_TopRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scene2_BottomLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scene2_BottomRight.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

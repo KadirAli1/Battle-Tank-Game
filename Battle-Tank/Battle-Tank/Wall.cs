@@ -10,55 +10,19 @@ namespace Battle_Tank
 {
     public class Wall
     {
-        public enum Direction{
-            Vertical,
-            Horizontal,
-            DecorTop,
-            DecorRight,
-            DecorBottom,
-            DecorLeft
-        };
         public Rectangle Rectangle { get; set; }
-        public Direction Dir { get; set; }
-        public Wall(Rectangle Rectangle, Direction Dir)
+        public Image Image { get; set; }
+        public Wall(Rectangle Rectangle, Image Image)
         {
 
             this.Rectangle = Rectangle;
-            this.Dir = Dir;
+            this.Image = Image;
         }
 
         public void Draw(Pen pen, Graphics g)
         {
-            if (Dir == Direction.Vertical)
-            {
-                g.DrawRectangle(pen, Rectangle);
-
-                g.DrawImage(Resources.Scene1_VerticalWall, Rectangle);
-
-            }
-            else if (Dir == Direction.Horizontal)
-            {
-                g.DrawRectangle(pen, Rectangle);
-                
-                g.DrawImage(Resources.Scene1_HorizontalWall, Rectangle);
-            }
-            else if (Dir == Direction.DecorTop)
-            {
-                g.DrawImage(Resources.Scene1_TopDecor, Rectangle);
-            }
-            else if (Dir == Direction.DecorRight)
-            {
-                g.DrawImage(Resources.Scene1_RightDecor, Rectangle);
-            }
-            else if (Dir == Direction.DecorBottom)
-            {
-                g.DrawImage(Resources.Scene1_BottomDecor, Rectangle);
-            }
-            else if (Dir == Direction.DecorLeft) 
-            {
-                g.DrawImage(Resources.Scene1_LeftDecor, Rectangle);
-            }
-            
+            g.DrawRectangle(pen, Rectangle);
+            g.DrawImage(Image, Rectangle);
         }
     }
 }
