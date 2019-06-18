@@ -34,3 +34,4 @@ C:\Users\IO\Documents\GitHub\Battle-Tank-Game\Battle-Tank\Battle-Tank\bin\Debug\
 C:\Users\IO\Documents\GitHub\Battle-Tank-Game\Battle-Tank\Battle-Tank\bin\Debug\Battle-Tank.exe
 C:\Users\IO\Documents\GitHub\Battle-Tank-Game\Battle-Tank\Battle-Tank\bin\Debug\Battle-Tank.pdb
 C:\Users\IO\Documents\GitHub\Battle-Tank-Game\Battle-Tank\Battle-Tank\obj\Debug\Battle_Tank.Form2.resources
+C:\Users\IO\Documents\GitHub\Battle-Tank-Game\Battle-Tank\Battle-Tank\obj\Debug\Battle_Tank.MainScene.resources

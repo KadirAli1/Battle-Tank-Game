@@ -59,6 +59,12 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainScene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainScene.Designer.cs">
+      <DependentUpon>MainScene.cs</DependentUpon>
+    </Compile>
     <Compile Include="Rotate.cs" />
     <Compile Include="Scene1.cs" />
     <Compile Include="Scene2.cs" />
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScene.resx">
+      <DependentUpon>MainScene.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
