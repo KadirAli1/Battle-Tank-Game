@@ -14,7 +14,8 @@ namespace Battle_Tank_Game
 {
 
     public partial class MainScene : Form
-    { 
+    {
+        private bool clicked = false;
         public MainScene()
         {
             InitializeComponent();
@@ -26,17 +27,34 @@ namespace Battle_Tank_Game
     
         private void PictureBox2_MouseLeave(object sender, EventArgs e)
         {
-
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.Cursor = Cursors.Default;
+            if(clicked == false)
+            {
+                pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                pictureBox2.Cursor = Cursors.Default;
+            }
+            else
+            {
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                pictureBox1.Cursor = Cursors.Default;
+            }
+          
         }
 
         private void PictureBox1_MouseLeave(object sender, EventArgs e)
         {
+            if(clicked == false)
+            {
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                pictureBox1.Cursor = Cursors.Default;
+            }
+            else
+            {
+                pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                pictureBox2.Cursor = Cursors.Default;
+              
+            }
 
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.Cursor = Cursors.Default;
-        
+
         }
 
         private void PictureBox3_Click(object sender, EventArgs e)
@@ -51,11 +69,20 @@ namespace Battle_Tank_Game
 
         private void PictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.Cursor = Cursors.Hand;
+            clicked = true;
             MessageBox.Show("Player 1");
         }
 
+ 
+        
+
         private void PictureBox2_MouseClick(object sender, MouseEventArgs e)
         {
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.Cursor = Cursors.Hand;
+            clicked = true;
             MessageBox.Show("Player 2");
         }
 
@@ -132,6 +159,26 @@ namespace Battle_Tank_Game
         {
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.Cursor = Cursors.Default;
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            
+        }
+        bool soundOn = true;
+        private void PictureBox5_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (soundOn == true)
+            {
+                pictureBox5.Image = Properties.Resources.sound_control_off;
+                soundOn = false;
+            }
+            else
+            { 
+                pictureBox5.Image = Properties.Resources.sound_control;
+                soundOn = true;
+            }
+
         }
     }
 }
