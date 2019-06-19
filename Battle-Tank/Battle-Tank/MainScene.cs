@@ -86,6 +86,52 @@ namespace Battle_Tank_Game
             pictureBox3.Cursor = Cursors.Default;
         }
 
-    
+        private void PictureBox4_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.Cursor = Cursors.Hand;
+        }
+
+        private void PictureBox4_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.Cursor = Cursors.Default;
+        }
+
+        private void PictureBox5_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.Cursor = Cursors.Hand;
+        }
+
+        private void PictureBox5_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.Cursor = Cursors.Default;
+        }
+
+        private void PictureBox8_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox8.Cursor = Cursors.Hand;
+        }
+
+        private void PictureBox8_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox8.Cursor = Cursors.Default;
+        }
+
+        private void PictureBox6_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.Cursor = Cursors.Hand;
+        }
+
+        private void PictureBox6_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.Cursor = Cursors.Default;
+        }
     }
 }
