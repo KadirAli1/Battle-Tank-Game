@@ -23,12 +23,7 @@ namespace Battle_Tank_Game
             this.DoubleBuffered = true;
 
             timer1.Start();
-            //timer2.Interval = 1000;
-            //timer2.Tick += new EventHandler(Timer2_Tick);
-
-            //timer2.Enabled = true;
-
-            button1.Click += new EventHandler(Button1_Click);
+        
             count = 0;
             flag = 0;
             timer3.Start();
@@ -66,28 +61,7 @@ namespace Battle_Tank_Game
                 this.Close();
             }
             
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
-            
-
-        }
-
-        private void Button1_MouseEnter(object sender, EventArgs e)
-        {
-            button1.FlatAppearance.BorderSize = 1;
-            button1.FlatAppearance.BorderColor = Color.Orange;
-        }
-
-        private void Button1_MouseLeave(object sender, EventArgs e)
-        {
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.BorderColor = Form2.DefaultBackColor;
-        }
-      
-
+        }  
         private void Timer2_Tick(object sender, EventArgs e)
         {
            

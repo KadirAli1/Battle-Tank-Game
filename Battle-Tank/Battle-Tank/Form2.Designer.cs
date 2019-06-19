@@ -33,7 +33,6 @@ partial class Form2
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
@@ -80,16 +79,6 @@ partial class Form2
             this.panel2.Size = new System.Drawing.Size(99, 9);
             this.panel2.TabIndex = 3;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(40, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "NEXT";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
             // timer2
             // 
             this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
@@ -106,7 +95,6 @@ partial class Form2
             this.BackgroundImage = global::Battle_Tank_Game.Properties.Resources.Tank_Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(656, 381);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -125,7 +113,6 @@ partial class Form2
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
     }
