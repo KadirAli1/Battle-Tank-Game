@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Battle_Tank
 {
@@ -92,6 +93,32 @@ namespace Battle_Tank
             Walls.Add(new Wall(new Rectangle(Scene.LEFT - 17, Scene.TOP + offset, 17, 270), Resources.Scene1_LeftDecor));
             Walls.Add(new Wall(new Rectangle(Scene.LEFT - 17, Scene.TOP + 1 * 270 + offset, 17, 270), Resources.Scene1_LeftDecor));
 
+        }
+
+        public override void DrawOtherElements(SceneForm sceneForm)
+        {
+            base.DrawOtherElements(sceneForm);
+
+            int left = 600;
+            int top = 200;
+            int distanceBetweenPictureBoxes = 200;
+
+            PictureBoxPlayer1.Location = new Point(left, top);
+            LabelPlayer1Name.Location = new Point(left + 10, top + 20);
+            LabelPlayer1Result.Location = new Point(left + 10 + 165 + 10, top + 20);
+
+            PictureBoxPlayer2.Location = new Point(left, top + distanceBetweenPictureBoxes);
+            LabelPlayer2Name.Location = new Point(left + 10, top + 20 + distanceBetweenPictureBoxes);
+            LabelPlayer2Result.Location = new Point(left + 10 + 165 + 10, top + 20 + distanceBetweenPictureBoxes);
+
+
+            // ADD CONTROLS
+            sceneForm.Controls.Add(LabelPlayer1Name);
+            sceneForm.Controls.Add(LabelPlayer1Result);
+            sceneForm.Controls.Add(PictureBoxPlayer1);
+            sceneForm.Controls.Add(LabelPlayer2Name);
+            sceneForm.Controls.Add(LabelPlayer2Result);
+            sceneForm.Controls.Add(PictureBoxPlayer2);
         }
     }
 }
