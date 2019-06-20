@@ -16,7 +16,9 @@ namespace Battle_Tank
 
         public static int TOP;
         public static int LEFT;
-        
+        public static int BOTTOM;
+        public static int RIGHT;
+
         public int Columns { get; set; }
         public int Rows { get; set; }
         //public int Width { get; set; }
@@ -39,8 +41,12 @@ namespace Battle_Tank
             this.Rows = Rows;
             this.RowHeight = RowHeight;
             this.ColumnWidth = ColumnWidth;
+
             TOP = 30;
             LEFT = 50;
+            BOTTOM = TOP + Rows * RowHeight;
+            RIGHT = LEFT + Columns * ColumnWidth;
+
             BackgroundColor = Color;
 
             PictureBoxPlayer1 = new PictureBox();

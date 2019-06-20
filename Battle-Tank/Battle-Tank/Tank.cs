@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Battle_Tank.Properties;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -32,8 +33,14 @@ namespace Battle_Tank
         public int SpeedMoving { get; set; }
         public int SpeedRotating { get; set; }
         public Image Image { get; set; }
+        public Rectangle TankRectangle { get; set; }
+        public enum Position
+        {
+            LeftToRight,
+            RightToLeft
+        }
 
-        public Tank(int X, int Y, float Angle, Color Color)
+        public Tank(int X, int Y, float Angle, Position Position)
         {
             this.X = X;
             this.Y = Y;
@@ -43,6 +50,10 @@ namespace Battle_Tank
             SpeedMoving = 3;
             SpeedRotating = 2;
             this.Color = Color;
+           
+            Image = Resources.tank_HorizontalColored;
+            
+            TankRectangle = new Rectangle(new Point(X, Y), new Size(Width, Height));
             calculateDxDy();
         }
 
@@ -65,9 +76,11 @@ namespace Battle_Tank
                 m.RotateAt(Angle, new PointF(X + (TankDimensions.Width / 2),
                                           Y + (TankDimensions.Height / 2)));
                 g.Transform = m;
-                g.FillRectangle(brush, X, Y, TankDimensions.Width, TankDimensions.Height);
-                g.FillRectangle(brush, X + TankDimensions.Width, Y + (TankDimensions.Height - TankDimensions.Height2) / 2, TankDimensions.Width2, TankDimensions.Height2);
+                //g.FillRectangle(brush, X, Y, TankDimensions.Width, TankDimensions.Height);
+                //g.FillRectangle(brush, X + TankDimensions.Width, Y + (TankDimensions.Height - TankDimensions.Height2) / 2, TankDimensions.Width2, TankDimensions.Height2);
                 //g.FillEllipse(brush, X + TankDimensions.Width + TankDimensions.Width2, Y + (TankDimensions.Height - TankDimensions.Height2) / 2, TankDimensions.Height2, TankDimensions.Height2);
+                g.DrawImage(Image, X, Y, TankDimensions.Width, TankDimensions.Height);
+                //g.DrawRectangle(new Pen(Color.Black, 2), X, Y, TankDimensions.Width, TankDimensions.Height);
                 g.ResetTransform();
             }
             //g.FillRectangle(brush, X, Y, Width, Height);
@@ -75,6 +88,38 @@ namespace Battle_Tank
 
             brush.Dispose();
         }
+
+        public void CheckCollisions(Scene scene)
+        {
+            //bool collision = false;
+            
+            foreach(Wall wall in scene.Walls)
+            {
+                if(intersect(wall.Rectangle, TankRectangle))
+                {
+
+                }
+            }
+        }
+
+        private bool intersect(Rectangle Wall, Rectangle Tank)
+        {
+            Point CenterWall = new Point(Wall.X + Wall.Width / 2, Wall.Y + Wall.Height / 2);
+            Point TankCenter = new Point(Tank.X + Tank.Width / 2, Tank.Y + Tank.Height / 2);
+
+            if(Math.Abs(Wall.X - Tank.X) < Wall.Width && Math.Abs(Wall.Y - Tank.Y) < Wall.Height)
+            {
+                return true;
+            }
+            if (Math.Abs(Wall.X - (Tank.X + Tank.Width)) < Wall.Width && Math.Abs(Wall.Y - Tank.Y) < Wall.Height)
+            {
+                return true;
+            }
+
+
+            return false;
+        }
+
 
         public void Move(bool forward, bool backward, bool leftRotate, bool rightRotate)
         {
@@ -108,16 +153,17 @@ namespace Battle_Tank
             }
         }
 
-        public Bullet Fire(Label label)
+        public Bullet Fire()
         {
             double radians = Angle * Math.PI / 180;
             
             float xTemp = X + (float) Math.Cos(radians) * (TankDimensions.Width + TankDimensions.Width2);
             float yTemp = Y + (float) Math.Sin(radians) * (TankDimensions.Width + TankDimensions.Width2);
 
-            label.Text = X + ", " + Y + "\n" +
-                xTemp + ", " + yTemp + "\n"
-                ;
+            //label.Text = X + ", " + Y + "\n" +
+            //    xTemp + ", " + yTemp + "\n"
+            //    ;
+
             Bullet bullet = new Bullet(xTemp, yTemp, radians);
             return bullet;
         }
