@@ -37,7 +37,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pbScores = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -45,7 +45,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbScores)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -136,17 +136,18 @@
             this.pictureBox7.TabIndex = 7;
             this.pictureBox7.TabStop = false;
             // 
-            // pictureBox8
+            // pbScores
             // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.Image = global::Battle_Tank_Game.Properties.Resources.scores_1;
-            this.pictureBox8.Location = new System.Drawing.Point(12, 359);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(229, 158);
-            this.pictureBox8.TabIndex = 8;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.MouseEnter += new System.EventHandler(this.PictureBox8_MouseEnter);
-            this.pictureBox8.MouseLeave += new System.EventHandler(this.PictureBox8_MouseLeave);
+            this.pbScores.BackColor = System.Drawing.Color.Transparent;
+            this.pbScores.Image = global::Battle_Tank_Game.Properties.Resources.scores_1;
+            this.pbScores.Location = new System.Drawing.Point(12, 359);
+            this.pbScores.Name = "pbScores";
+            this.pbScores.Size = new System.Drawing.Size(229, 158);
+            this.pbScores.TabIndex = 8;
+            this.pbScores.TabStop = false;
+            
+            this.pbScores.MouseEnter += new System.EventHandler(this.PictureBox8_MouseEnter);
+            this.pbScores.MouseLeave += new System.EventHandler(this.PictureBox8_MouseLeave);
             // 
             // MainScene
             // 
@@ -155,7 +156,7 @@
             this.BackgroundImage = global::Battle_Tank_Game.Properties.Resources.Tank_Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(963, 610);
-            this.Controls.Add(this.pictureBox8);
+            this.Controls.Add(this.pbScores);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox3);
@@ -165,6 +166,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "MainScene";
             this.Text = "MainScene";
+            this.Load += new System.EventHandler(this.MainScene_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -172,7 +174,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbScores)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -186,6 +188,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pbScores;
     }
 }

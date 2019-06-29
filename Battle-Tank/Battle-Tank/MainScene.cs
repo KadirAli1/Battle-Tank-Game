@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Battle_Tank_Game.Properties;
+using System.Media;
 
 namespace Battle_Tank_Game
 
@@ -19,12 +20,11 @@ namespace Battle_Tank_Game
         public MainScene()
         {
             InitializeComponent();
-
             this.DoubleBuffered = true;
-
+        
         } 
 
-    
+            //2Player PictureBox
         private void PictureBox2_MouseLeave(object sender, EventArgs e)
         {
             if(clicked == false)
@@ -40,6 +40,7 @@ namespace Battle_Tank_Game
           
         }
 
+        //1Player PictureBox
         private void PictureBox1_MouseLeave(object sender, EventArgs e)
         {
             if(clicked == false)
@@ -57,6 +58,7 @@ namespace Battle_Tank_Game
 
         }
 
+        //Play -PcitureBox
         private void PictureBox3_Click(object sender, EventArgs e)
         {
             //SceneForm sceneForm = new SceneForm();
@@ -88,12 +90,16 @@ namespace Battle_Tank_Game
 
         private void PictureBox1_MouseEnter(object sender, EventArgs e)
         {
+            SoundPlayer soundPlayer = new SoundPlayer(Resources.ding);
+            soundPlayer.Play();
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.Cursor = Cursors.Hand;
         }
 
         private void PictureBox2_MouseEnter(object sender, EventArgs e)
         {
+            SoundPlayer soundPlayer = new SoundPlayer(Resources.ding);
+            soundPlayer.Play();
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.Cursor = Cursors.Hand;
         }
@@ -103,18 +109,23 @@ namespace Battle_Tank_Game
    
         private void PictureBox3_MouseEnter(object sender, EventArgs e)
         {
+            SoundPlayer soundPlayer = new SoundPlayer(Resources.ding);
+            soundPlayer.Play();
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.Cursor = Cursors.Hand;
         }
 
         private void PictureBox3_MouseLeave(object sender, EventArgs e)
         {
+
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.Cursor = Cursors.Default;
         }
 
         private void PictureBox4_MouseEnter(object sender, EventArgs e)
         {
+            SoundPlayer soundPlayer = new SoundPlayer(Resources.ding);
+            soundPlayer.Play();
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.Cursor = Cursors.Hand;
         }
@@ -127,6 +138,12 @@ namespace Battle_Tank_Game
 
         private void PictureBox5_MouseEnter(object sender, EventArgs e)
         {
+            if(soundOn == clicked)
+            {
+                  SoundPlayer soundPlayer = new SoundPlayer(Resources.ding);
+                 soundPlayer.Play();
+            }
+
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.Cursor = Cursors.Hand;
         }
@@ -139,18 +156,22 @@ namespace Battle_Tank_Game
 
         private void PictureBox8_MouseEnter(object sender, EventArgs e)
         {
-            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox8.Cursor = Cursors.Hand;
+            SoundPlayer soundPlayer = new SoundPlayer(Resources.ding);
+            soundPlayer.Play();
+            pbScores.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbScores.Cursor = Cursors.Hand;
         }
 
         private void PictureBox8_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox8.Cursor = Cursors.Default;
+            pbScores.SizeMode = PictureBoxSizeMode.Zoom;
+            pbScores.Cursor = Cursors.Default;
         }
 
         private void PictureBox6_MouseEnter(object sender, EventArgs e)
         {
+            SoundPlayer soundPlayer = new SoundPlayer(Resources.ding);
+            soundPlayer.Play();
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox6.Cursor = Cursors.Hand;
         }
@@ -172,13 +193,26 @@ namespace Battle_Tank_Game
             {
                 pictureBox5.Image = Properties.Resources.sound_control_off;
                 soundOn = false;
+                SoundPlayer sound = new SoundPlayer(Resources.song__online_audio_converter_com_);
+                sound.Stop();
             }
             else
             { 
                 pictureBox5.Image = Properties.Resources.sound_control;
                 soundOn = true;
+                SoundPlayer sound = new SoundPlayer(Resources.song__online_audio_converter_com_);
+                sound.Play();
             }
 
         }
+
+        private void MainScene_Load(object sender, EventArgs e)
+        {
+            SoundPlayer sound = new SoundPlayer(Resources.song__online_audio_converter_com_);
+            sound.Play();
+
+        }
+
+       
     }
 }
