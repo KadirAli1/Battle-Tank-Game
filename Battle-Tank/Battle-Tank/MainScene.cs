@@ -16,6 +16,7 @@ namespace Battle_Tank_Game
 
     public partial class MainScene : Form
     {
+        KeysForm keys;
         private bool clicked = false;
         public MainScene()
         {
@@ -187,6 +188,8 @@ namespace Battle_Tank_Game
             
         }
         bool soundOn = true;
+        //PictureBox5 = Sound_on Sound_off
+         //Changing
         private void PictureBox5_MouseClick(object sender, MouseEventArgs e)
         {
             if (soundOn == true)
@@ -205,7 +208,8 @@ namespace Battle_Tank_Game
             }
 
         }
-
+        //Музика која шѕо се активизира при отворање на скената MainScene
+        //Кериаремо Објект од  класта system.Media.SoundPlayer и во Resourc folderот се наје мелодиѕата и се старува како Wav format.
         private void MainScene_Load(object sender, EventArgs e)
         {
             SoundPlayer sound = new SoundPlayer(Resources.song__online_audio_converter_com_);
@@ -213,6 +217,15 @@ namespace Battle_Tank_Game
 
         }
 
-       
+        //PictureBox4  = Keys
+        //После кликнање на PictureBox4(Keys) се отвара нова форма која што се вика КeysForm
+        private void PictureBox4_Click(object sender, EventArgs e)
+        {
+            KeysForm keysForm = new KeysForm();
+            if(keysForm.ShowDialog() == DialogResult.OK)
+            {
+                keysForm.AddOwnedForm(keysForm);
+            }
+        }
     }
 }
