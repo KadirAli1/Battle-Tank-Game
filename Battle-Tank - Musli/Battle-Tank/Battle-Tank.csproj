@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B7BCA391-CC2B-4D9E-9DE0-4D1A90C6EF36}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Battle_Tank</RootNamespace>
+    <AssemblyName>Battle-Tank</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainScene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainScene.designer.cs">
+      <DependentUpon>MainScene.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsersDatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScene.resx">
+      <DependentUpon>MainScene.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="UsersDatabaseDataSet.xsc">
+      <DependentUpon>UsersDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UsersDatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsersDatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UsersDatabaseDataSet.xss">
+      <DependentUpon>UsersDatabaseDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1-player.1.png" />
+    <None Include="Resources\2-players.1.png" />
+    <None Include="Resources\7.png" />
+    <None Include="Resources\ding.wav" />
+    <None Include="Resources\keys.1.png" />
+    <None Include="Resources\login.1.png" />
+    <None Include="Resources\play.1.png" />
+    <None Include="Resources\Reslts_Panel263x76.png" />
+    <None Include="Resources\Results_Panel.png" />
+    <None Include="Resources\Scene1_BottomDecor.png" />
+    <None Include="Resources\Scene1_HorizontalWall.png" />
+    <None Include="Resources\Scene1_LeftDecor.png" />
+    <None Include="Resources\Scene1_RightDecor.png" />
+    <None Include="Resources\Scene1_TopDecor.png" />
+    <None Include="Resources\Scene1_VerticalWall.png" />
+    <None Include="Resources\Scene2_BottomLeft.png" />
+    <None Include="Resources\Scene2_BottomRight.png" />
+    <None Include="Resources\Scene2_InnerWallHorizontal.png" />
+    <None Include="Resources\Scene2_InnerWallVertical.png" />
+    <None Include="Resources\Scene2_OuterWallHorizontal.png" />
+    <None Include="Resources\Scene2_OuterWallVertical.png" />
+    <None Include="Resources\Scene2_TopLeft.png" />
+    <None Include="Resources\Scene2_TopRight.png" />
+    <None Include="Resources\Scene3_InnerWallHorizontal.png" />
+    <None Include="Resources\Scene3_InnerWallVertical.png" />
+    <None Include="Resources\Scene4_HorizontalWall.png" />
+    <None Include="Resources\Scene4_VerticalWall.png" />
+    <None Include="Resources\Scene5_HorizontalWall.png" />
+    <None Include="Resources\Scene5_VerticalWall.png" />
+    <None Include="Resources\Scene7_BottomLeft.png" />
+    <None Include="Resources\Scene7_BottomRight.png" />
+    <None Include="Resources\Scene7_InnerWallHorizontal.png" />
+    <None Include="Resources\Scene7_InnerWallVertical.png" />
+    <None Include="Resources\Scene7_OuterWallBottom.png" />
+    <None Include="Resources\Scene7_OuterWallHorizontal.png" />
+    <None Include="Resources\Scene7_OuterWallLeft.png" />
+    <None Include="Resources\Scene7_OuterWallRight.png" />
+    <None Include="Resources\Scene7_OuterWallTop.png" />
+    <None Include="Resources\Scene7_OuterWallVertical.png" />
+    <None Include="Resources\Scene7_TopLeft.png" />
+    <None Include="Resources\Scene7_TopRight.png" />
+    <None Include="Resources\Scene8_InnerWallHorizontal.png" />
+    <None Include="Resources\Scene8_InnerWallVertical.png" />
+    <None Include="Resources\Scene9_InnerWallHorizontal.png" />
+    <None Include="Resources\Scene9_InnerWallVertical.png" />
+    <None Include="Resources\Scene10_InnerWallHorizontal.png" />
+    <None Include="Resources\Scene10_InnerWallVertical.png" />
+    <None Include="Resources\scores.1.png" />
+    <None Include="Resources\song %28online-audio-converter.com%29.wav" />
+    <None Include="Resources\sound-control.off.png" />
+    <None Include="Resources\sound-control.png" />
+    <None Include="Resources\tada.wav" />
+    <None Include="Resources\tank.png" />
+    <None Include="Resources\Tank_Background.jpg" />
+    <None Include="Resources\tank_Horizontal.png" />
+    <None Include="Resources\tank_HorizontalColored.png" />
+    <None Include="Resources\tank_HorizontalLeft.png" />
+    <None Include="Resources\tank_HorizontalRight.png" />
+    <Content Include="UsersDatabase.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UsersDatabase_log.ldf">
+      <DependentUpon>UsersDatabase.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
