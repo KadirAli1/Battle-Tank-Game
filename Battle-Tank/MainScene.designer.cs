@@ -66,6 +66,7 @@
             this.pictureBox5.Size = new System.Drawing.Size(184, 135);
             this.pictureBox5.TabIndex = 4;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             this.pictureBox5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictureBox5_MouseClick);
             this.pictureBox5.MouseEnter += new System.EventHandler(this.PictureBox5_MouseEnter);
             this.pictureBox5.MouseLeave += new System.EventHandler(this.PictureBox5_MouseLeave);
@@ -80,6 +81,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(267, 152);
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click_1);
             this.pictureBox3.MouseEnter += new System.EventHandler(this.PictureBox3_MouseEnter);
             this.pictureBox3.MouseLeave += new System.EventHandler(this.PictureBox3_MouseLeave);
             // 

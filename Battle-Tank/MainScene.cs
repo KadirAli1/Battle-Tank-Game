@@ -21,7 +21,8 @@ namespace Battle_Tank
         private bool clicked = false;
         SqlConnection connection;
         string connectionString;
-        
+        public string Player1Name { get; set; }
+        public string Player2Name { get; set; }
         public MainScene()
         {
             InitializeComponent();
@@ -252,6 +253,20 @@ namespace Battle_Tank
         }
 
         private void pbScores_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click_1(object sender, EventArgs e)
+        {
+            Player1Name = "Player 1";
+            Player2Name = "Player 2";
+            SceneForm sceneForm = new SceneForm(Player1Name, Player1Name);
+            //MessageBox.Show(Player1Name, Player2Name);
+            DialogResult result = sceneForm.ShowDialog();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
         {
 
         }

@@ -29,7 +29,7 @@ namespace Battle_Tank
         private void Form1_Load(object sender, EventArgs e)
         {
             tbUsername.Focus();
-            
+            this.ActiveControl = tbUsername;
             string query = "SELECT MAX(Points) FROM Users";
             using (connection = new SqlConnection(connectionString))
             using (SqlCommand SqlQuery = new SqlCommand(query, connection))
@@ -151,7 +151,7 @@ namespace Battle_Tank
         //QIKY ASHT BUTONI SHKA KLIKOHET.. QAJ MA NALT U KON TJETER E KAM FSHI
         private void btnPlayM_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             SceneForm sceneForm = new SceneForm(Player1Name, Player1Name);
             //MessageBox.Show(Player1Name, Player2Name);
             DialogResult result = sceneForm.ShowDialog();
