@@ -18,6 +18,8 @@ namespace Battle_Tank
         static bool loggedFirst = false;
         SqlConnection connection;
         string connectionString;
+        public string Player1Name { get; set; }
+        public string Player2Name { get; set; }
         public LoginForm()
         {
             InitializeComponent();
@@ -133,7 +135,8 @@ namespace Battle_Tank
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("PRESSED");
+            SceneForm sceneForm = new SceneForm(Player1Name, Player1Name);
+            this.Close();
         }
 
         private void tbUsernameM_Click(object sender, EventArgs e)
@@ -143,7 +146,8 @@ namespace Battle_Tank
 
         private void btnPlayM_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("PLAY PRESSED");
+            SceneForm sceneForm = new SceneForm(Player1Name, Player1Name);
+            this.Close();
         }
     }
 }

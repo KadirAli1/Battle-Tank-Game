@@ -21,11 +21,13 @@ namespace Battle_Tank
         private bool clicked = false;
         SqlConnection connection;
         string connectionString;
+        
         public MainScene()
         {
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["Battle_Tank.Properties.Settings.UsersDatabaseConnectionString"].ConnectionString;
             this.DoubleBuffered = true;
+            //this.WindowState = FormWindowState.Maximized;
         } 
 
             //2Player PictureBox

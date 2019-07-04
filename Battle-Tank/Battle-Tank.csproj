@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bullet.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,13 +84,34 @@
     <Compile Include="MainScene.designer.cs">
       <DependentUpon>MainScene.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewGame.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scene.cs" />
+    <Compile Include="Scene1.cs" />
+    <Compile Include="Scene10.cs" />
+    <Compile Include="Scene2.cs" />
+    <Compile Include="Scene3.cs" />
+    <Compile Include="Scene4.cs" />
+    <Compile Include="Scene5.cs" />
+    <Compile Include="Scene6.cs" />
+    <Compile Include="Scene7.cs" />
+    <Compile Include="Scene8.cs" />
+    <Compile Include="Scene9.cs" />
+    <Compile Include="SceneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceneForm.Designer.cs">
+      <DependentUpon>SceneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tank.cs" />
     <Compile Include="UsersDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UsersDatabaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Wall.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
