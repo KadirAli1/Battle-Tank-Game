@@ -31,25 +31,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblBest = new System.Windows.Forms.Label();
-            this.lblPlayer1 = new System.Windows.Forms.Label();
-            this.lblPlayer2 = new System.Windows.Forms.Label();
-            this.lblLoginPlayer1 = new System.Windows.Forms.Label();
-            this.lblLoginPlayer2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tbUsername = new MetroFramework.Controls.MetroTextBox();
             this.tbPassword = new MetroFramework.Controls.MetroTextBox();
             this.btnPlayM = new MetroFramework.Controls.MetroButton();
             this.lblSpace = new System.Windows.Forms.Label();
+            this.lblPlayer1M = new MetroFramework.Controls.MetroLabel();
+            this.lblPlayer2M = new MetroFramework.Controls.MetroLabel();
+            this.lblLoginPlayer1M = new MetroFramework.Controls.MetroLabel();
+            this.lblLoginPlayer2M = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(144, 161);
+            this.btnLogin.Location = new System.Drawing.Point(144, 149);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(75, 35);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Log in";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -57,73 +55,20 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(226, 161);
+            this.btnRegister.Location = new System.Drawing.Point(226, 149);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.Size = new System.Drawing.Size(75, 35);
             this.btnRegister.TabIndex = 3;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 205);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Best User";
-            // 
-            // lblBest
-            // 
-            this.lblBest.AutoSize = true;
-            this.lblBest.Location = new System.Drawing.Point(89, 205);
-            this.lblBest.Name = "lblBest";
-            this.lblBest.Size = new System.Drawing.Size(35, 13);
-            this.lblBest.TabIndex = 8;
-            this.lblBest.Text = "points";
-            this.lblBest.Click += new System.EventHandler(this.lblBest_Click);
-            // 
-            // lblPlayer1
-            // 
-            this.lblPlayer1.AutoSize = true;
-            this.lblPlayer1.Location = new System.Drawing.Point(334, 79);
-            this.lblPlayer1.Name = "lblPlayer1";
-            this.lblPlayer1.Size = new System.Drawing.Size(48, 13);
-            this.lblPlayer1.TabIndex = 9;
-            this.lblPlayer1.Text = "Player 1:";
-            // 
-            // lblPlayer2
-            // 
-            this.lblPlayer2.AutoSize = true;
-            this.lblPlayer2.Location = new System.Drawing.Point(334, 111);
-            this.lblPlayer2.Name = "lblPlayer2";
-            this.lblPlayer2.Size = new System.Drawing.Size(48, 13);
-            this.lblPlayer2.TabIndex = 10;
-            this.lblPlayer2.Text = "Player 2:";
-            // 
-            // lblLoginPlayer1
-            // 
-            this.lblLoginPlayer1.AutoSize = true;
-            this.lblLoginPlayer1.Location = new System.Drawing.Point(399, 79);
-            this.lblLoginPlayer1.Name = "lblLoginPlayer1";
-            this.lblLoginPlayer1.Size = new System.Drawing.Size(0, 13);
-            this.lblLoginPlayer1.TabIndex = 11;
-            // 
-            // lblLoginPlayer2
-            // 
-            this.lblLoginPlayer2.AutoSize = true;
-            this.lblLoginPlayer2.Location = new System.Drawing.Point(399, 111);
-            this.lblLoginPlayer2.Name = "lblLoginPlayer2";
-            this.lblLoginPlayer2.Size = new System.Drawing.Size(0, 13);
-            this.lblLoginPlayer2.TabIndex = 12;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(16, 77);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(122, 98);
+            this.pictureBox1.Size = new System.Drawing.Size(122, 107);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
@@ -180,7 +125,7 @@
             this.tbPassword.DisplayIcon = true;
             this.tbPassword.Icon = ((System.Drawing.Image)(resources.GetObject("tbPassword.Icon")));
             this.tbPassword.Lines = new string[0];
-            this.tbPassword.Location = new System.Drawing.Point(146, 106);
+            this.tbPassword.Location = new System.Drawing.Point(146, 110);
             this.tbPassword.MaxLength = 32767;
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
@@ -201,9 +146,9 @@
             // 
             this.btnPlayM.BackColor = System.Drawing.Color.Red;
             this.btnPlayM.Enabled = false;
-            this.btnPlayM.Location = new System.Drawing.Point(337, 161);
+            this.btnPlayM.Location = new System.Drawing.Point(337, 149);
             this.btnPlayM.Name = "btnPlayM";
-            this.btnPlayM.Size = new System.Drawing.Size(75, 23);
+            this.btnPlayM.Size = new System.Drawing.Size(149, 35);
             this.btnPlayM.TabIndex = 18;
             this.btnPlayM.Text = "Play";
             this.btnPlayM.UseSelectable = true;
@@ -218,26 +163,62 @@
             this.lblSpace.Size = new System.Drawing.Size(0, 20);
             this.lblSpace.TabIndex = 19;
             // 
+            // lblPlayer1M
+            // 
+            this.lblPlayer1M.AutoSize = true;
+            this.lblPlayer1M.Location = new System.Drawing.Point(337, 79);
+            this.lblPlayer1M.Name = "lblPlayer1M";
+            this.lblPlayer1M.Size = new System.Drawing.Size(57, 19);
+            this.lblPlayer1M.TabIndex = 20;
+            this.lblPlayer1M.Text = "Player 1:";
+            // 
+            // lblPlayer2M
+            // 
+            this.lblPlayer2M.AutoSize = true;
+            this.lblPlayer2M.Location = new System.Drawing.Point(337, 110);
+            this.lblPlayer2M.Name = "lblPlayer2M";
+            this.lblPlayer2M.Size = new System.Drawing.Size(59, 19);
+            this.lblPlayer2M.TabIndex = 21;
+            this.lblPlayer2M.Text = "Player 2:";
+            // 
+            // lblLoginPlayer1M
+            // 
+            this.lblLoginPlayer1M.AutoSize = true;
+            this.lblLoginPlayer1M.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblLoginPlayer1M.Location = new System.Drawing.Point(403, 79);
+            this.lblLoginPlayer1M.Name = "lblLoginPlayer1M";
+            this.lblLoginPlayer1M.Size = new System.Drawing.Size(0, 0);
+            this.lblLoginPlayer1M.TabIndex = 22;
+            // 
+            // lblLoginPlayer2M
+            // 
+            this.lblLoginPlayer2M.AutoSize = true;
+            this.lblLoginPlayer2M.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblLoginPlayer2M.Location = new System.Drawing.Point(403, 111);
+            this.lblLoginPlayer2M.Name = "lblLoginPlayer2M";
+            this.lblLoginPlayer2M.Size = new System.Drawing.Size(0, 0);
+            this.lblLoginPlayer2M.TabIndex = 23;
+            // 
             // LoginForm
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 292);
+            this.ClientSize = new System.Drawing.Size(523, 235);
+            this.Controls.Add(this.lblLoginPlayer2M);
+            this.Controls.Add(this.lblLoginPlayer1M);
+            this.Controls.Add(this.lblPlayer2M);
+            this.Controls.Add(this.lblPlayer1M);
             this.Controls.Add(this.lblSpace);
             this.Controls.Add(this.btnPlayM);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbUsername);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblLoginPlayer2);
-            this.Controls.Add(this.lblLoginPlayer1);
-            this.Controls.Add(this.lblPlayer2);
-            this.Controls.Add(this.lblPlayer1);
-            this.Controls.Add(this.lblBest);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogin);
             this.Name = "LoginForm";
+            this.Resizable = false;
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -248,17 +229,15 @@
         #endregion
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblBest;
-        private System.Windows.Forms.Label lblPlayer1;
-        private System.Windows.Forms.Label lblPlayer2;
-        private System.Windows.Forms.Label lblLoginPlayer1;
-        private System.Windows.Forms.Label lblLoginPlayer2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroTextBox tbUsername;
         private MetroFramework.Controls.MetroTextBox tbPassword;
         private MetroFramework.Controls.MetroButton btnPlayM;
         private System.Windows.Forms.Label lblSpace;
+        private MetroFramework.Controls.MetroLabel lblPlayer1M;
+        private MetroFramework.Controls.MetroLabel lblPlayer2M;
+        private MetroFramework.Controls.MetroLabel lblLoginPlayer1M;
+        private MetroFramework.Controls.MetroLabel lblLoginPlayer2M;
     }
 }
 

@@ -29,13 +29,14 @@ namespace Battle_Tank
         private void Form1_Load(object sender, EventArgs e)
         {
             tbUsername.Focus();
+            
             string query = "SELECT MAX(Points) FROM Users";
             using (connection = new SqlConnection(connectionString))
             using (SqlCommand SqlQuery = new SqlCommand(query, connection))
             {
                 connection.Open();
                 int result = (int)SqlQuery.ExecuteScalar();
-                lblBest.Text = result.ToString();
+                //lblBest.Text = result.ToString();
             }
         }
 
@@ -87,7 +88,7 @@ namespace Battle_Tank
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            bool logInSuccesfully = false;
+            //bool logInSuccesfully = false;
             connection = new SqlConnection(connectionString);
             connection.Open();
             SqlCommand checkUser = new SqlCommand("SELECT COUNT(*) FROM[Users] WHERE ([UserName] = @userName) " +
@@ -101,7 +102,8 @@ namespace Battle_Tank
                 MessageBox.Show("Log in succesfully");
                 if (!loggedFirst)
                 {
-                    lblLoginPlayer1.Text = tbUsername.Text;
+                    lblLoginPlayer1M.Text = tbUsername.Text;
+                    Player1Name = tbUsername.Text;
                     tbUsername.Text = "";
                     tbPassword.Text = "";
                     tbUsername.Focus();
@@ -110,7 +112,8 @@ namespace Battle_Tank
        
                 else if (loggedFirst)
                 {
-                    lblLoginPlayer2.Text = tbUsername.Text;
+                    lblLoginPlayer2M.Text = tbUsername.Text;
+                    Player2Name = tbUsername.Text;  
                     tbUsername.Text = "";
                     tbPassword.Text = "";
                     loggedFirst = false;
@@ -136,7 +139,8 @@ namespace Battle_Tank
         private void btnPlay_Click(object sender, EventArgs e)
         {
             SceneForm sceneForm = new SceneForm(Player1Name, Player1Name);
-            this.Close();
+            DialogResult result = sceneForm.ShowDialog();
+            //this.Close();
         }
 
         private void tbUsernameM_Click(object sender, EventArgs e)
@@ -144,10 +148,14 @@ namespace Battle_Tank
 
         }
 
+        //QIKY ASHT BUTONI SHKA KLIKOHET.. QAJ MA NALT U KON TJETER E KAM FSHI
         private void btnPlayM_Click(object sender, EventArgs e)
         {
-            SceneForm sceneForm = new SceneForm(Player1Name, Player1Name);
             this.Close();
+            SceneForm sceneForm = new SceneForm(Player1Name, Player1Name);
+            //MessageBox.Show(Player1Name, Player2Name);
+            DialogResult result = sceneForm.ShowDialog();
+            
         }
     }
 }

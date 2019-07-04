@@ -31,20 +31,20 @@ namespace Battle_Tank
         } 
 
             //2Player PictureBox
-        private void PictureBox2_MouseLeave(object sender, EventArgs e)
-        {
-            if(clicked == false)
-            {
-                pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                pictureBox2.Cursor = Cursors.Default;
-            }
-            else
-            {
-                pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                pictureBox2.Cursor = Cursors.Default;
-            }
+        //private void PictureBox2_MouseLeave(object sender, EventArgs e)
+        //{
+        //    if(clicked == false)
+        //    {
+        //        pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+        //        pictureBox2.Cursor = Cursors.Default;
+        //    }
+        //    else
+        //    {
+        //        pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+        //        pictureBox2.Cursor = Cursors.Default;
+        //    }
           
-        }
+        //}
 
         //1Player PictureBox
         //private void PictureBox1_MouseLeave(object sender, EventArgs e)
@@ -84,13 +84,13 @@ namespace Battle_Tank
  
         
 
-        private void PictureBox2_MouseClick(object sender, MouseEventArgs e)
-        {
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.Cursor = Cursors.Hand;
-            clicked = true;
-            MessageBox.Show("Player 2");
-        }
+        //private void PictureBox2_MouseClick(object sender, MouseEventArgs e)
+        //{
+        //    pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+        //    pictureBox2.Cursor = Cursors.Hand;
+        //    clicked = true;
+        //    MessageBox.Show("Player 2");
+        //}
 
         //private void PictureBox1_MouseEnter(object sender, EventArgs e)
         //{
@@ -100,13 +100,13 @@ namespace Battle_Tank
         //    pictureBox1.Cursor = Cursors.Hand;
         //}
 
-        private void PictureBox2_MouseEnter(object sender, EventArgs e)
-        {
-            SoundPlayer soundPlayer = new SoundPlayer(Resources.ding);
-            soundPlayer.Play();
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.Cursor = Cursors.Hand;
-        }
+        //private void PictureBox2_MouseEnter(object sender, EventArgs e)
+        //{
+        //    SoundPlayer soundPlayer = new SoundPlayer(Resources.ding);
+        //    soundPlayer.Play();
+        //    pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+        //    pictureBox2.Cursor = Cursors.Hand;
+        //}
 
  
 
