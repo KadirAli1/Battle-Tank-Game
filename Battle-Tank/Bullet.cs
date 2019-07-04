@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Battle_Tank.Properties;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -13,34 +14,36 @@ namespace Battle_Tank
         public readonly float Radius = TankDimensions.Height2/2.0F;
         public float X { get; set; }
         public float Y { get; set; }
-        public Point Center { get; set; }
+        public PointF Center { get; set; }
         public double Angle { get; set; }
         public float Dx { get; set; }
         public float Dy { get; set; }
         public int Speed { get; set; }
         public Color Color { get; set; }
         public Matrix Matrix { get; set; }
-
+        public int BulletTime { get; set; }
+        public int BeginningTime { get; set; }
         public Bullet(float X, float Y, double Angle)
         {
             this.X = X;
             this.Y = Y;
             this.Angle = Angle;
-            this.Center = new Point((int)(X + Radius), (int)(Y + Radius));
-            Speed = 4;
+            this.Center = new PointF(X + Radius, Y + Radius);
+            Speed = 5;
             Dx = (float)Math.Cos(Angle) * Speed;
             Dy = (float)Math.Sin(Angle) * Speed;
-
+            BulletTime = 0;
+            BeginningTime = 0;
             this.Color = Color.Black;
         }
 
         public void Draw(Graphics g)
         {
             Brush brush = new SolidBrush(Color);
-
-            g.FillEllipse(brush, X + TankDimensions.Width + TankDimensions.Width2, Y + (TankDimensions.Height - TankDimensions.Height2) / 2, 
+            g.FillEllipse(brush, X, Y,
                 TankDimensions.Height2, TankDimensions.Height2);
-
+            //g.DrawString(string.Format("{0},{1}", Center.X, Center.Y), new Font("Arial", 12), brush, X, Y+20);
+            
             brush.Dispose();
         }
 
@@ -48,16 +51,17 @@ namespace Battle_Tank
         {
             X += Dx;
             Y += Dy;
-            scene.LabelPlayer1Name.Text = "HEYY";
+            Center = new PointF(X + Radius, Y + Radius);
+            //scene.LabelPlayer1Name.Text = "HEYY";
             //SceneForm.Invalidate();
-            isColiding(scene);
+            isColidingWithWalls(scene);
+            BulletTime += 15;
+            BeginningTime++;
         }
 
-        public void isColiding(Scene scene)
+        public void isColidingWithWalls(Scene scene)
         {
             List<Wall> walls = scene.Walls;
-
-            scene.LabelPlayer1Name.Text = "HEYY";
 
             foreach (Wall wall in walls)
             {
@@ -66,21 +70,36 @@ namespace Battle_Tank
                 int left = wall.Rectangle.Left;
                 int right = wall.Rectangle.Right;
 
-                int cX = Center.X;
-                int cY = Center.Y;
+                float cX = Center.X;
+                float cY = Center.Y;
 
-                if(cY - Radius < bottom && cY - Radius > top && cX < right && cX > left)
+                if (cY - Radius < bottom && cY - Radius > top && cX < right && cX > left)
                 {
                     Dy *= -1;
+                  
                 }
-                else if(cY + Radius < bottom && cY + Radius > top && cX < right && cX > left)
+                if (cY + Radius < bottom && cY + Radius > top && cX < right && cX > left)
                 {
                     Dy *= -1;
+                   
                 }
+                if(cX - Radius < right && cX - Radius > left && cY > top && cY < bottom)
+                {
+                    Dx *= -1;
+                  
+                }
+                if (cX + Radius > left && cX + Radius < right && cY > top && cY < bottom)
+                {
+                    Dx *= -1;
+         
+                }
+
             }
         }
-        
 
-        
+        public void isColidingWithTank()
+        {
+            
+        }
     }
 }

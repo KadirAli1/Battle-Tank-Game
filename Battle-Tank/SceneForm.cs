@@ -27,7 +27,18 @@ namespace Battle_Tank
         bool rightRotatePlayer2 = false;
 
         public Tank Tank { get; set; }
-        public List<Bullet> Bullets { get; set; }
+        public static List<Bullet> Bullets { get; set; }
+
+        private bool MClicked;
+        private bool QClicked;
+        private int MTime;
+        private int QTime;
+
+        private bool nextGame;
+        private int nextGameTime;
+
+        private int SceneNumber;
+
         public SceneForm(string Player1Name, string Player2Name)
         {
             InitializeComponent();
@@ -35,10 +46,20 @@ namespace Battle_Tank
             //WindowState = FormWindowState.Maximized;
             //label1.Text = this.Width + " " + this.Height;
             this.WindowState = FormWindowState.Maximized;
-            NewGame = new NewGame(Player1Name, Player2Name);
+            NewGame = new NewGame(this.Width, this.Height, Player1Name, Player2Name);
             Bullets = new List<Bullet>();
             DoubleBuffered = true;
             Initialize_Timer();
+
+            MClicked = false;
+            QClicked = false;
+            MTime = 0;
+            QTime = 0;
+
+            nextGame = false;
+            nextGameTime = 0;
+
+            SceneNumber = 0;
         }
 
         void Initialize_Timer()
@@ -76,24 +97,61 @@ namespace Battle_Tank
             //
             // Timer tick event handler
             //
+            if (nextGame)
+            {
+                nextGameTime += 15;
+                if(nextGameTime > 3000)
+                {
+                    
+                    
+                    this.Controls.Clear();
+                    nextGameTime = 0;
+                    NewGame.Player1.Tank.IsTankBurned = false;
+                    NewGame.Player1.Tank.IsTankBurned = false;
+                    NewGame.Player1.Tank.Image = Resources.tank_HorizontalColored;
+                    NewGame.Player2.Tank.Image = Resources.tank_HorizontalColored;
+                    nextGame = false;
+                    SceneNumber++;
+                    NewGame.GenerateScene(SceneNumber);
+                    NewGame.Player1.RefreshTanks(Tank.Position.LeftToRight);
+                    NewGame.Player2.RefreshTanks(Tank.Position.RightToLeft);
+                }
+            }
+            else
+            {
+                if (MClicked)
+                {
+                    MTime += 15;
+                    if (MTime > 350)
+                    {
+                        MClicked = false;
+                        MTime = 0;
+                    }
+                }
 
-            //
-            // Call Main_Function()
-            //
-            Movement(NewGame.ActualScene);
+                if (QClicked)
+                {
+                    QTime += 15;
+                    if (QTime > 350)
+                    {
+                        QClicked = false;
+                        QTime = 0;
+                    }
+                }
 
-            //
-            //
-            //
+                Movement(NewGame.ActualScene);
+            }
         }
 
         private void SceneForm_Paint(object sender, PaintEventArgs e)
         {
+            
             Graphics g = e.Graphics;
             Color color = NewGame.ActualScene.BackgroundColor;
             g.Clear(color);
             Pen pen = new Pen(color, 1);
 
+            //g.DrawEllipse(pen, new Rectangle(new Point(100, 100), new Size(200, 300)));
             NewGame.DrawScene(pen, g, this);
 
             foreach (Bullet bullet in Bullets)
@@ -101,6 +159,13 @@ namespace Battle_Tank
                 bullet.Draw(g);
             }
 
+            for(int i = Bullets.Count - 1; i >= 0; --i)
+            {
+                if(Bullets[i].BulletTime > 5000)
+                {
+                    Bullets.RemoveAt(i);
+                }
+            }
             pen.Dispose();
         }
 
@@ -205,18 +270,46 @@ namespace Battle_Tank
         {
             if (e.KeyCode == Keys.M)
             {
-                Bullets.Add(NewGame.Player1.Tank.Fire());
+                if (!MClicked)
+                {
+                    Bullets.Add(NewGame.Player1.Tank.Fire());
+                    MClicked = true;
+                }
             }
             if (e.KeyCode == Keys.Q)
             {
-                Bullets.Add(NewGame.Player2.Tank.Fire());
+                if (!QClicked)
+                {
+                    Bullets.Add(NewGame.Player2.Tank.Fire());
+                    QClicked = true;
+                }
             }
         }
 
         private void Movement(Scene scene)
         {
-            NewGame.Player1.Tank.Move(forwardPlayer1, backwardPlayer1, leftRotatePlayer1, rightRotatePlayer1);
-            NewGame.Player2.Tank.Move(forwardPlayer2, backwardPlayer2, leftRotatePlayer2, rightRotatePlayer2);
+            // label1.Text = !NewGame.Player1.IsPlayerBurned + " " + !NewGame.Player2.IsPlayerBurned;
+            if (!NewGame.Player1.IsPlayerBurned)
+            {
+                NewGame.Player1.Tank.Move(forwardPlayer1, backwardPlayer1, leftRotatePlayer1, rightRotatePlayer1, NewGame.ActualScene.Walls);
+            }
+            else
+            {
+                NewGame.Player2Points++;
+                Bullets.Clear();
+                nextGame = true;
+            }
+            if (!NewGame.Player2.IsPlayerBurned)
+            {
+                NewGame.Player2.Tank.Move(forwardPlayer2, backwardPlayer2, leftRotatePlayer2, rightRotatePlayer2, NewGame.ActualScene.Walls);
+            }
+            else
+            {
+                NewGame.Player1Points++;
+                Bullets.Clear();
+                nextGame = true;
+            }
+            
             foreach (Bullet bullet in Bullets)
             {
                 bullet.Move(scene);

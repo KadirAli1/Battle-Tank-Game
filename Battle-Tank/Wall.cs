@@ -22,6 +22,7 @@ namespace Battle_Tank
         public void Draw(Pen pen, Graphics g)
         {
             g.DrawRectangle(pen, Rectangle);
+            //g.DrawString(string.Format("{0},{1},{2},{3}",Rectangle.Left, Rectangle.Top, Rectangle.Right, Rectangle.Bottom), new Font("Arial", 10), new SolidBrush(Color.Red), Rectangle.X, Rectangle.Y);
             g.DrawImage(Image, Rectangle);
         }
     }

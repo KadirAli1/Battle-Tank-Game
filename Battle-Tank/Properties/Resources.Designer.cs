@@ -600,6 +600,16 @@ namespace Battle_Tank.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Tank_Burned {
+            get {
+                object obj = ResourceManager.GetObject("Tank_Burned", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tank_Horizontal {
             get {
                 object obj = ResourceManager.GetObject("tank_Horizontal", resourceCulture);

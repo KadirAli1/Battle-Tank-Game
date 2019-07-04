@@ -261,7 +261,7 @@ namespace Battle_Tank
         {
             Player1Name = "Player 1";
             Player2Name = "Player 2";
-            SceneForm sceneForm = new SceneForm(Player1Name, Player1Name);
+            SceneForm sceneForm = new SceneForm(Player1Name, Player2Name);
             //MessageBox.Show(Player1Name, Player2Name);
             DialogResult result = sceneForm.ShowDialog();
         }

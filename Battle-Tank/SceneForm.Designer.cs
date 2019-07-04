@@ -28,10 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // SceneForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "SceneForm";
             this.Text = "SceneForm";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.SceneForm_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SceneForm_KeyDown);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

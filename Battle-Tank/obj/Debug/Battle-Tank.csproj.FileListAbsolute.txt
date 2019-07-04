@@ -79,3 +79,4 @@ C:\Users\HP\Documents\GitHub\Battle-Tank-Game\Battle-Tank\obj\Debug\Battle-Tank.
 C:\Users\HP\Documents\GitHub\Battle-Tank-Game\Battle-Tank\obj\Debug\Battle-Tank.csproj.CopyComplete
 C:\Users\HP\Documents\GitHub\Battle-Tank-Game\Battle-Tank\obj\Debug\Battle-Tank.exe
 C:\Users\HP\Documents\GitHub\Battle-Tank-Game\Battle-Tank\obj\Debug\Battle-Tank.pdb
+C:\Users\FisnikL\Documents\GitHub\Battle-Tank-Game\Battle-Tank\obj\Debug\Battle_Tank.SceneForm.resources

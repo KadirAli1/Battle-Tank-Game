@@ -152,7 +152,7 @@ namespace Battle_Tank
         private void btnPlayM_Click(object sender, EventArgs e)
         {
             this.Hide();
-            SceneForm sceneForm = new SceneForm(Player1Name, Player1Name);
+            SceneForm sceneForm = new SceneForm(Player1Name, Player2Name);
             //MessageBox.Show(Player1Name, Player2Name);
             DialogResult result = sceneForm.ShowDialog();
             

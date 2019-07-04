@@ -13,25 +13,30 @@ namespace Battle_Tank
         public int Width { get; set; }
         public int Height { get; set; }
         public Scene ActualScene { get; set; }
-        public Player Player1 { get; set; }
-        public Player Player2 { get; set; }
-        public NewGame(string firstPlayerName, string secondPlayerName)
+        public static Player Player1 { get; set; }
+        public static Player Player2 { get; set; }
+        public static int Player1Points { get; set; }
+        public static int Player2Points { get; set; }
+        public NewGame(int Width, int Height, string Player1Name, string Player2Name)
         {
-            //this.Width = Width;
-            //this.Height = Height;
-            
-            GenerateScene();
+            this.Width = Width;
+            this.Height = Height;
 
-            Player1 = new Player(firstPlayerName, Tank.Position.LeftToRight);
-            Player2 = new Player(secondPlayerName, Tank.Position.RightToLeft);
+            GenerateScene(0);
+            Player1 = new Player(Player1Name, Tank.Position.LeftToRight);
+            Player2 = new Player(Player2Name, Tank.Position.RightToLeft);
+            Player1Points = 0;
+            Player2Points = 0;
         }
 
 
-        private void GenerateScene()
+        public void GenerateScene(int r)
         {
-            Random random = new Random();
-
-            int r = random.Next(0,11);
+            if (r == 0)
+            {
+                Random random = new Random();
+                r = random.Next(1, 11);
+            }
 
             switch (r)
             {

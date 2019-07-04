@@ -69,7 +69,7 @@ namespace Battle_Tank
                 wall.Draw(pen, g);
             }
 
-            foreach(Wall wall in DecorWalls)
+            foreach (Wall wall in DecorWalls)
             {
                 wall.Draw(pen, g);
             }
@@ -84,7 +84,7 @@ namespace Battle_Tank
             PictureBoxPlayer1.Size = new Size(263, 76);
 
             // MAX NUMBER OF CHARACTERS: 10
-            LabelPlayer1Name.Text = "FISNIK";
+            LabelPlayer1Name.Text = NewGame.Player1.Name;
             LabelPlayer1Name.Size = new Size(165, 40);
             LabelPlayer1Name.TextAlign = ContentAlignment.MiddleCenter;
             LabelPlayer1Name.BackColor = Color.FromArgb(0, 80, 126);
@@ -95,7 +95,7 @@ namespace Battle_Tank
             PictureBoxPlayer2.Size = new Size(263, 76);
 
             // MAX NUMBER OF CHARACTERS: 10
-            LabelPlayer2Name.Text = "KADIR";
+            LabelPlayer2Name.Text = NewGame.Player2.Name;
             LabelPlayer2Name.Size = new Size(165, 40);
             LabelPlayer2Name.TextAlign = ContentAlignment.MiddleCenter;
             LabelPlayer2Name.BackColor = Color.FromArgb(0, 80, 126);
@@ -103,7 +103,7 @@ namespace Battle_Tank
             LabelPlayer2Name.ForeColor = Color.FromArgb(255, 0, 255);
 
 
-            LabelPlayer1Result.Text = string.Format("{0:D2}", 0);
+            LabelPlayer1Result.Text = string.Format("{0:D2}", NewGame.Player1Points);
             LabelPlayer1Result.BorderStyle = BorderStyle.None;
             LabelPlayer1Result.Size = new Size(60, 40);
             LabelPlayer1Result.TextAlign = ContentAlignment.MiddleCenter;
@@ -113,7 +113,7 @@ namespace Battle_Tank
 
 
             // MAX NUMBER OF CHARACTERS: 10
-            LabelPlayer2Result.Text = string.Format("{0:D2}", 0);
+            LabelPlayer2Result.Text = string.Format("{0:D2}", NewGame.Player2Points);
             LabelPlayer2Result.BorderStyle = BorderStyle.None;
             LabelPlayer2Result.Size = new Size(60, 40);
             LabelPlayer2Result.TextAlign = ContentAlignment.MiddleCenter;
