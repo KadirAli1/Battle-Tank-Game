@@ -39,6 +39,9 @@ namespace Battle_Tank
 
         private int SceneNumber;
 
+        private bool gameOver;
+        private int totalGamesPlayed;
+
         public SceneForm(string Player1Name, string Player2Name)
         {
             InitializeComponent();
@@ -60,6 +63,9 @@ namespace Battle_Tank
             nextGameTime = 0;
 
             SceneNumber = 0;
+
+            gameOver = false;
+            totalGamesPlayed = 3;
         }
 
         void Initialize_Timer()
@@ -102,19 +108,26 @@ namespace Battle_Tank
                 nextGameTime += 15;
                 if(nextGameTime > 3000)
                 {
+                    if(NewGame.Player1Points == totalGamesPlayed || NewGame.Player2Points == totalGamesPlayed)
+                    {
+                        gameOver = true;
+                        Invalidate();
+                    }
+                    else
+                    {
+                        this.Controls.Clear();
+                        nextGameTime = 0;
+                        NewGame.Player1.Tank.IsTankBurned = false;
+                        NewGame.Player1.Tank.IsTankBurned = false;
+                        NewGame.Player1.Tank.Image = Resources.tank_HorizontalColored;
+                        NewGame.Player2.Tank.Image = Resources.tank_HorizontalColored;
+                        SceneNumber++;
+                        NewGame.GenerateScene(SceneNumber);
+                        NewGame.Player1.RefreshTanks(Tank.Position.LeftToRight);
+                        NewGame.Player2.RefreshTanks(Tank.Position.RightToLeft);
+                        nextGame = false;
+                    }
                     
-                    
-                    this.Controls.Clear();
-                    nextGameTime = 0;
-                    NewGame.Player1.Tank.IsTankBurned = false;
-                    NewGame.Player1.Tank.IsTankBurned = false;
-                    NewGame.Player1.Tank.Image = Resources.tank_HorizontalColored;
-                    NewGame.Player2.Tank.Image = Resources.tank_HorizontalColored;
-                    nextGame = false;
-                    SceneNumber++;
-                    NewGame.GenerateScene(SceneNumber);
-                    NewGame.Player1.RefreshTanks(Tank.Position.LeftToRight);
-                    NewGame.Player2.RefreshTanks(Tank.Position.RightToLeft);
                 }
             }
             else
@@ -167,6 +180,15 @@ namespace Battle_Tank
                 }
             }
             pen.Dispose();
+            if (gameOver)
+            {
+                Clock.Stop();
+                string message = NewGame.Player1.Name + "\t" + NewGame.Player2.Name + "\n" +
+                    "Score: " + NewGame.Player1Points + "\tScore: " + NewGame.Player2Points + "\n\n\n" +
+                    "Winner is: " + (NewGame.Player1Points > NewGame.Player2Points ? NewGame.Player1.Name : NewGame.Player2.Name);
+
+                MessageBox.Show(message);
+            }
         }
 
 
@@ -295,9 +317,12 @@ namespace Battle_Tank
             }
             else
             {
-                NewGame.Player2Points++;
-                Bullets.Clear();
-                nextGame = true;
+                if (!nextGame)
+                {
+                    NewGame.Player2Points++;
+                    Bullets.Clear();
+                    nextGame = true;
+                }
             }
             if (!NewGame.Player2.IsPlayerBurned)
             {
@@ -305,9 +330,12 @@ namespace Battle_Tank
             }
             else
             {
-                NewGame.Player1Points++;
-                Bullets.Clear();
-                nextGame = true;
+                if (!nextGame)
+                {
+                    NewGame.Player1Points++;
+                    Bullets.Clear();
+                    nextGame = true;
+                }
             }
             
             foreach (Bullet bullet in Bullets)
