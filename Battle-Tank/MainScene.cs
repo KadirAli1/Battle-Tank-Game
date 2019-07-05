@@ -254,27 +254,32 @@ namespace Battle_Tank
 
         private void pbScores_Click(object sender, EventArgs e)
         {
-            string query = "SELECT UserName FROM Users";
+            string query = "SELECT UserName, Points FROM Users";
+            string queryPoints = "SELECT Points FROM Users";
             string result = "";
+            string resultPoints = "";
             using (connection = new SqlConnection(connectionString))
             using (SqlCommand command1 = new SqlCommand(query, connection))
             {
                 connection.Open();
                 SqlDataReader reader = command1.ExecuteReader();
-
                 if (reader.HasRows)
                 {
-                    
-                    result = reader["UserName"].ToString();
-                    MessageBox.Show(result);
+                    //Console.WriteLine("\t{0}", reader.GetName(0));
+                    //MessageBox.Show(result);
+                    while (reader.Read())
+                    {
+                        Console.WriteLine("\t{0}\t{1}", reader.GetString(0), reader.GetInt32(1));
+                        result += reader.GetString(0) + "             " + reader.GetInt32(1) + "\n";
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("IT DOES NOT");
+                    MetroFramework.MetroMessageBox.Show(this,"IT DOES NOT");
                 }
             }
-
             MessageBox.Show(result);
+            //MetroFramework.MetroMessageBox.Show(this, result, "SCORES");
         }
 
         public static void updateScores(String player1Username, String player2Username, int player1Points, int player2Points)
