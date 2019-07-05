@@ -188,7 +188,7 @@ namespace Battle_Tank
                     "Winner is: " + (NewGame.Player1Points > NewGame.Player2Points ? NewGame.Player1.Name : NewGame.Player2.Name);
 
                 MessageBox.Show(message);*/
-                this.Hide();
+             
                 ResultsScene rs = new ResultsScene();
 
                 rs.ShowDialog();
