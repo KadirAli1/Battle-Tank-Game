@@ -100,3 +100,5 @@ E:\Github_Project\Battle-Tank\obj\Debug\Battle-Tank.csproj.CopyComplete
 E:\Github_Project\Battle-Tank\obj\Debug\Battle-Tank.exe
 E:\Github_Project\Battle-Tank\obj\Debug\Battle-Tank.pdb
 C:\Users\FisnikL\Documents\GitHub\Battle-Tank-Game\Battle-Tank\obj\Debug\Battle_Tank.ResultsScene.resources
+C:\Users\HP\Documents\GitHub\Battle-Tank-Game\Battle-Tank\obj\Debug\Battle_Tank.ResultsScene.resources
+C:\Users\HP\Documents\GitHub\Battle-Tank-Game\Battle-Tank\obj\Debug\Battle_Tank.SceneForm.resources

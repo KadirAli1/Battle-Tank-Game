@@ -16,8 +16,8 @@ namespace Battle_Tank
     public partial class LoginForm : MetroFramework.Forms.MetroForm
     {
         static bool loggedFirst = false;
-        SqlConnection connection;
-        string connectionString;
+        public static SqlConnection connection;
+        public static string connectionString;
         public string Player1Name { get; set; }
         public string Player2Name { get; set; }
         public LoginForm()

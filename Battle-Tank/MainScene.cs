@@ -254,7 +254,52 @@ namespace Battle_Tank
 
         private void pbScores_Click(object sender, EventArgs e)
         {
+            string query = "SELECT UserName FROM Users";
+            string result = "";
+            using (connection = new SqlConnection(connectionString))
+            using (SqlCommand command1 = new SqlCommand(query, connection))
+            {
+                connection.Open();
+                SqlDataReader reader = command1.ExecuteReader();
 
+                if (reader.HasRows)
+                {
+                    
+                    result = reader["UserName"].ToString();
+                    MessageBox.Show(result);
+                }
+                else
+                {
+                    MessageBox.Show("IT DOES NOT");
+                }
+            }
+
+            MessageBox.Show(result);
+        }
+
+        public static void updateScores(String player1Username, String player2Username, int player1Points, int player2Points)
+        {
+            string query = "UPDATE Users" +
+                "SET Points = @PointsUpdated" +
+                "WHERE UserName = @UserName";
+
+            using (LoginForm.connection = new SqlConnection(LoginForm.connectionString))
+            using (SqlCommand command1 = new SqlCommand(query, LoginForm.connection))
+            {
+                LoginForm.connection.Open();
+                command1.Parameters.AddWithValue("@UserName", player1Username);
+                command1.Parameters.AddWithValue("PointsUpdated", player1Points);
+
+                command1.ExecuteScalar();
+            }
+            using (SqlCommand command2 = new SqlCommand(query, LoginForm.connection))
+            {
+                LoginForm.connection.Open();
+                command2.Parameters.AddWithValue("@UserName", player2Username);
+                command2.Parameters.AddWithValue("PointsUpdated", player2Points);
+
+                command2.ExecuteScalar();
+            }
         }
 
         private void pictureBox3_Click_1(object sender, EventArgs e)

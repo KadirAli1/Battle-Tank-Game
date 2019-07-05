@@ -12,6 +12,7 @@ namespace Battle_Tank
     public class Player
     {
         public string Name { get; set; }
+        public int Points { get; set; }
         public Tank Tank { get; set; }
         public bool IsPlayerBurned {get;set;}
         // public static int Points { get; set; }
