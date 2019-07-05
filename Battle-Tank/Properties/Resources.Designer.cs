@@ -93,6 +93,16 @@ namespace Battle_Tank.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BrownTank {
+            get {
+                object obj = ResourceManager.GetObject("BrownTank", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BrownTankWinner {
             get {
                 object obj = ResourceManager.GetObject("BrownTankWinner", resourceCulture);
@@ -640,16 +650,6 @@ namespace Battle_Tank.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tank {
-            get {
-                object obj = ResourceManager.GetObject("tank", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Tank_Background {
             get {
                 object obj = ResourceManager.GetObject("Tank_Background", resourceCulture);
@@ -663,46 +663,6 @@ namespace Battle_Tank.Properties {
         internal static System.Drawing.Bitmap Tank_Burned {
             get {
                 object obj = ResourceManager.GetObject("Tank_Burned", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap tank_Horizontal {
-            get {
-                object obj = ResourceManager.GetObject("tank_Horizontal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap tank_HorizontalColored {
-            get {
-                object obj = ResourceManager.GetObject("tank_HorizontalColored", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap tank_HorizontalLeft {
-            get {
-                object obj = ResourceManager.GetObject("tank_HorizontalLeft", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap tank_HorizontalRight {
-            get {
-                object obj = ResourceManager.GetObject("tank_HorizontalRight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

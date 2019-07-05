@@ -119,8 +119,8 @@ namespace Battle_Tank
                         nextGameTime = 0;
                         NewGame.Player1.Tank.IsTankBurned = false;
                         NewGame.Player1.Tank.IsTankBurned = false;
-                        NewGame.Player1.Tank.Image = Resources.tank_HorizontalColored;
-                        NewGame.Player2.Tank.Image = Resources.tank_HorizontalColored;
+                        NewGame.Player1.Tank.Image = Resources.BrownTank;
+                        NewGame.Player2.Tank.Image = Resources.BrownTank;
                         SceneNumber++;
                         NewGame.GenerateScene(SceneNumber);
                         NewGame.Player1.RefreshTanks(Tank.Position.LeftToRight);

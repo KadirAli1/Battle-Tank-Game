@@ -232,12 +232,7 @@
     <None Include="Resources\sound-control.off.png" />
     <None Include="Resources\sound-control.png" />
     <None Include="Resources\tada.wav" />
-    <None Include="Resources\tank.png" />
     <None Include="Resources\Tank_Background.jpg" />
-    <None Include="Resources\tank_Horizontal.png" />
-    <None Include="Resources\tank_HorizontalColored.png" />
-    <None Include="Resources\tank_HorizontalLeft.png" />
-    <None Include="Resources\tank_HorizontalRight.png" />
     <None Include="Resources\Tank_Burned.png" />
     <None Include="Resources\GreenTank.png" />
     <None Include="Resources\FirstScene.jpg" />
@@ -245,6 +240,7 @@
     <None Include="Resources\newGameBtn.png" />
     <None Include="Resources\GreenTankWinner.png" />
     <None Include="Resources\BrownTankWinner.png" />
+    <None Include="Resources\BrownTank.png" />
     <Content Include="UsersDatabase.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

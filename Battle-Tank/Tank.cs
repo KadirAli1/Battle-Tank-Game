@@ -56,8 +56,16 @@ namespace Battle_Tank
             SpeedMoving = 3;
             SpeedRotating = 3;
             this.Color = Color;
-           
-            Image = Resources.tank_HorizontalColored;
+
+            if (Position == Position.LeftToRight)
+            {
+                Image = Resources.GreenTank;
+            }
+            else
+            {
+                Image = Resources.BrownTank;
+            }
+            
             
             TankRectangle = new Rectangle(new Point(X, Y), new Size(Width, Height));
             IsTankBurned = false;

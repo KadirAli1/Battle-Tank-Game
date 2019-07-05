@@ -16,11 +16,10 @@ namespace Battle_Tank
         public NewGame NewGame { get; set; }
         public string Player1Name { get; set; }
         public string Player2Name { get; set; }
-
-
         public ResultsScene()
         {
             InitializeComponent();
+            //this.WindowState = FormWindowState.Maximized;
         }
 
         private void ResultsScene_Load(object sender, EventArgs e)
