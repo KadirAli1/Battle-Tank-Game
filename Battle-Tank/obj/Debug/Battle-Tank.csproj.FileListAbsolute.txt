@@ -142,3 +142,5 @@ C:\Users\IO\Documents\GitHub\Battle-Tank-Game\Battle-Tank\obj\Debug\Battle-Tank.
 C:\Users\IO\Documents\GitHub\Battle-Tank-Game\Battle-Tank\obj\Debug\Battle-Tank.csproj.CopyComplete
 C:\Users\IO\Documents\GitHub\Battle-Tank-Game\Battle-Tank\obj\Debug\Battle-Tank.exe
 C:\Users\IO\Documents\GitHub\Battle-Tank-Game\Battle-Tank\obj\Debug\Battle-Tank.pdb
+C:\Users\FisnikL\Documents\GitHub\Battle-Tank-Game\Battle-Tank\obj\Debug\Battle_Tank.Form2.resources
+C:\Users\FisnikL\Documents\GitHub\Battle-Tank-Game\Battle-Tank\obj\Debug\Battle_Tank.KeysForm.resources

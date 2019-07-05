@@ -134,7 +134,7 @@ namespace Battle_Tank
                 nextGameTime += 15;
                 if(nextGameTime > 3000)
                 {
-                    if(NewGame.Player1.Points == totalGamesPlayed || NewGame.Player2.Points == totalGamesPlayed)
+                    if(NewGame.Player1.Points + NewGame.Player2.Points == totalGamesPlayed)
                     {
                         gameOver = true;
                         this.Controls.Clear();
