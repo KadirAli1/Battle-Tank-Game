@@ -88,6 +88,12 @@
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultsScene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultsScene.Designer.cs">
+      <DependentUpon>ResultsScene.cs</DependentUpon>
+    </Compile>
     <Compile Include="Scene.cs" />
     <Compile Include="Scene1.cs" />
     <Compile Include="Scene10.cs" />
@@ -128,6 +134,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ResultsScene.resx">
+      <DependentUpon>ResultsScene.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SceneForm.resx">
       <DependentUpon>SceneForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +239,10 @@
     <None Include="Resources\tank_HorizontalLeft.png" />
     <None Include="Resources\tank_HorizontalRight.png" />
     <None Include="Resources\Tank_Burned.png" />
+    <None Include="Resources\GreenTank.png" />
+    <None Include="Resources\FirstScene.jpg" />
+    <None Include="Resources\ExitBtn.png" />
+    <None Include="Resources\newGameBtn.png" />
     <Content Include="UsersDatabase.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
