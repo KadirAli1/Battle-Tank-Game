@@ -91,6 +91,16 @@ namespace Battle_Tank.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BrownTankWinner {
+            get {
+                object obj = ResourceManager.GetObject("BrownTankWinner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream ding {
@@ -115,6 +125,16 @@ namespace Battle_Tank.Properties {
         internal static System.Drawing.Bitmap GreenTank {
             get {
                 object obj = ResourceManager.GetObject("GreenTank", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GreenTankWinner {
+            get {
+                object obj = ResourceManager.GetObject("GreenTankWinner", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

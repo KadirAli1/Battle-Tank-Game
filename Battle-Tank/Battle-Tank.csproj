@@ -243,6 +243,8 @@
     <None Include="Resources\FirstScene.jpg" />
     <None Include="Resources\ExitBtn.png" />
     <None Include="Resources\newGameBtn.png" />
+    <None Include="Resources\GreenTankWinner.png" />
+    <None Include="Resources\BrownTankWinner.png" />
     <Content Include="UsersDatabase.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

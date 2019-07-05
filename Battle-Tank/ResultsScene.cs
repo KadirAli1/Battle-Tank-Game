@@ -7,11 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Battle_Tank.Properties;
 
 namespace Battle_Tank
 {
     public partial class ResultsScene : Form
     {
+        public NewGame NewGame { get; set; }
+        public string Player1Name { get; set; }
+        public string Player2Name { get; set; }
+
+
         public ResultsScene()
         {
             InitializeComponent();
@@ -27,6 +33,7 @@ namespace Battle_Tank
             exitBtn.BackColor = Color.Transparent;
 
             responsiveFeature();
+            checkWinner();
            
         }
 
@@ -75,6 +82,34 @@ namespace Battle_Tank
         {
             exitBtn.SizeMode = PictureBoxSizeMode.Zoom;
             exitBtn.Cursor = Cursors.Default;
+        }
+
+        public void checkWinner()
+        {
+            if (NewGame.Player1Points > NewGame.Player2Points)
+            {
+                this.BackgroundImage = Resources.GreenTankWinner;
+                winnerScore.Text = NewGame.Player1Points.ToString();
+                looserScore.Text = NewGame.Player2Points.ToString();
+            }
+            else
+            {
+                this.BackgroundImage = Resources.BrownTankWinner;
+                winnerScore.Text = NewGame.Player2Points.ToString();
+                looserScore.Text = NewGame.Player1Points.ToString();
+            }
+        }
+
+        private void newGamebtn_Click(object sender, EventArgs e)
+        {
+            MainScene ms = new MainScene();
+            ms.Show();
+            this.Close();
+        }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

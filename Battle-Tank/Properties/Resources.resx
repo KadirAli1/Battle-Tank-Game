@@ -295,11 +295,17 @@
   <data name="Tank_Burned" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tank_Burned.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BrownTankWinner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BrownTankWinner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ExitBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ExitBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GreenTank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GreenTank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GreenTankWinner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GreenTankWinner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="newGameBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\newGameBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

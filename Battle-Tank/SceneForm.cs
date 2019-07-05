@@ -183,11 +183,16 @@ namespace Battle_Tank
             if (gameOver)
             {
                 Clock.Stop();
-                string message = NewGame.Player1.Name + "\t" + NewGame.Player2.Name + "\n" +
+                /*string message = NewGame.Player1.Name + "\t" + NewGame.Player2.Name + "\n" +
                     "Score: " + NewGame.Player1Points + "\tScore: " + NewGame.Player2Points + "\n\n\n" +
                     "Winner is: " + (NewGame.Player1Points > NewGame.Player2Points ? NewGame.Player1.Name : NewGame.Player2.Name);
 
-                MessageBox.Show(message);
+                MessageBox.Show(message);*/
+                this.Hide();
+                ResultsScene rs = new ResultsScene();
+
+                rs.ShowDialog();
+                this.Close();
             }
         }
 

@@ -47,6 +47,7 @@
             this.newGamebtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.newGamebtn.TabIndex = 0;
             this.newGamebtn.TabStop = false;
+            this.newGamebtn.Click += new System.EventHandler(this.newGamebtn_Click);
             this.newGamebtn.MouseEnter += new System.EventHandler(this.newGamebtn_MouseEnter);
             this.newGamebtn.MouseLeave += new System.EventHandler(this.newGamebtn_MouseLeave);
             // 
@@ -59,6 +60,7 @@
             this.exitBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.exitBtn.TabIndex = 1;
             this.exitBtn.TabStop = false;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             this.exitBtn.MouseEnter += new System.EventHandler(this.exitBtn_MouseEnter);
             this.exitBtn.MouseLeave += new System.EventHandler(this.exitBtn_MouseLeave);
             // 
