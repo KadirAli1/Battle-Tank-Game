@@ -24,6 +24,7 @@ namespace Battle_Tank
         {
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["Battle_Tank.Properties.Settings.UsersDatabaseConnectionString"].ConnectionString;
+
         }
 
         private void Form1_Load(object sender, EventArgs e)

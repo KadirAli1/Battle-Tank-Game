@@ -1,4 +1,4 @@
-﻿namespace Battle_Tank_Game
+﻿namespace Battle_Tank
 {
     partial class KeysForm
     {
@@ -65,7 +65,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Battle_Tank_Game.Properties.Resources.up__2_;
+            this.pictureBox1.Image = global::Battle_Tank.Properties.Resources.up__2_;
             this.pictureBox1.Location = new System.Drawing.Point(112, 114);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(70, 87);
@@ -74,7 +74,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Battle_Tank_Game.Properties.Resources.down__2_;
+            this.pictureBox2.Image = global::Battle_Tank.Properties.Resources.down__2_;
             this.pictureBox2.Location = new System.Drawing.Point(122, 298);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(70, 87);
@@ -83,7 +83,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Battle_Tank_Game.Properties.Resources.right__2_;
+            this.pictureBox3.Image = global::Battle_Tank.Properties.Resources.right__2_;
             this.pictureBox3.Location = new System.Drawing.Point(221, 206);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(70, 87);
@@ -92,7 +92,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::Battle_Tank_Game.Properties.Resources.left__2_;
+            this.pictureBox4.Image = global::Battle_Tank.Properties.Resources.left__2_;
             this.pictureBox4.Location = new System.Drawing.Point(12, 206);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(70, 87);
@@ -101,7 +101,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::Battle_Tank_Game.Properties.Resources.m__3_;
+            this.pictureBox5.Image = global::Battle_Tank.Properties.Resources.m__3_;
             this.pictureBox5.Location = new System.Drawing.Point(241, 308);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(95, 77);
@@ -185,7 +185,7 @@
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = global::Battle_Tank_Game.Properties.Resources.exiti;
+            this.pictureBox6.Image = global::Battle_Tank.Properties.Resources.exiti;
             this.pictureBox6.Location = new System.Drawing.Point(375, 308);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(100, 50);

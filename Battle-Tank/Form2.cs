@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Battle_Tank_Game
+namespace Battle_Tank
 {
     public partial class Form2 : Form
     {

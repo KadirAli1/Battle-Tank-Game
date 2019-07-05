@@ -23,18 +23,19 @@ namespace Battle_Tank
         string connectionString;
         public string Player1Name { get; set; }
         public string Player2Name { get; set; }
+        KeysForm keys;
         public MainScene()
         {
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["Battle_Tank.Properties.Settings.UsersDatabaseConnectionString"].ConnectionString;
             this.DoubleBuffered = true;
             //this.WindowState = FormWindowState.Maximized;
-        } 
+        }
 
-            //2Player PictureBox
+        //2Player PictureBox
         //private void PictureBox2_MouseLeave(object sender, EventArgs e)
         //{
-        //    if(clicked == false)
+        //    if (clicked == false)
         //    {
         //        pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
         //        pictureBox2.Cursor = Cursors.Default;
@@ -44,7 +45,7 @@ namespace Battle_Tank
         //        pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
         //        pictureBox2.Cursor = Cursors.Default;
         //    }
-          
+
         //}
 
         //1Player PictureBox
@@ -59,18 +60,18 @@ namespace Battle_Tank
         //    {
         //        pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
         //        pictureBox2.Cursor = Cursors.Default;
-              
+
         //    }
         //}
 
         //Play -PcitureBox
         private void PictureBox3_Click(object sender, EventArgs e)
         {
-            //SceneForm sceneForm = new SceneForm();
-            //if(sceneForm.ShowDialog() == DialogResult.OK)
-            //{
-            //    sceneForm.AddOwnedForm(sceneForm);
-            //}
+            SceneForm sceneForm = new SceneForm(Player1Name, Player2Name);
+            if (sceneForm.ShowDialog() == DialogResult.OK)
+            {
+                sceneForm.AddOwnedForm(sceneForm);
+            }
 
         }
 
@@ -146,7 +147,7 @@ namespace Battle_Tank
             if(soundOn == clicked)
             {
                   SoundPlayer soundPlayer = new SoundPlayer(Resources.ding);
-                 soundPlayer.Play();
+                   soundPlayer.Play();
             }
 
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -349,6 +350,15 @@ namespace Battle_Tank
         private void pictureBox5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void PictureBox4_Click(object sender, EventArgs e)
+        {
+            KeysForm keysForm = new KeysForm();
+            if (keysForm.ShowDialog() == DialogResult.OK)
+            {
+                keysForm.AddOwnedForm(keysForm);
+            }
         }
     }
 }

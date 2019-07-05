@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
-using Battle_Tank_Game.Properties;
+using Battle_Tank.Properties;
 
-namespace Battle_Tank_Game
+namespace Battle_Tank
 {
     public partial class KeysForm : Form
     {

@@ -54,6 +54,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.PictureBox4_Click);
             this.pictureBox4.MouseEnter += new System.EventHandler(this.PictureBox4_MouseEnter);
             this.pictureBox4.MouseLeave += new System.EventHandler(this.PictureBox4_MouseLeave);
             // 

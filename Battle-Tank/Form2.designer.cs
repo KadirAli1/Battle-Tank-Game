@@ -1,6 +1,6 @@
-﻿namespace Battle_Tank_Game
+﻿namespace Battle_Tank
 {
-partial class Form2
+    partial class Form2
     {
         /// <summary>
         /// Required designer variable.
@@ -81,7 +81,7 @@ partial class Form2
             // 
             // timer2
             // 
-        //    this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
+            //    this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
             // 
             // timer3
             // 
@@ -92,7 +92,7 @@ partial class Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Battle_Tank_Game.Properties.Resources.Tank_Background;
+            this.BackgroundImage = global::Battle_Tank.Properties.Resources.Tank_Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(656, 381);
             this.Controls.Add(this.panel1);
