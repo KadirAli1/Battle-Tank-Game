@@ -102,6 +102,26 @@ namespace Battle_Tank.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ExitBtn {
+            get {
+                object obj = ResourceManager.GetObject("ExitBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GreenTank {
+            get {
+                object obj = ResourceManager.GetObject("GreenTank", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap keys_1 {
             get {
                 object obj = ResourceManager.GetObject("keys_1", resourceCulture);
@@ -115,6 +135,16 @@ namespace Battle_Tank.Properties {
         internal static System.Drawing.Bitmap login_1 {
             get {
                 object obj = ResourceManager.GetObject("login_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap newGameBtn {
+            get {
+                object obj = ResourceManager.GetObject("newGameBtn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -145,6 +175,16 @@ namespace Battle_Tank.Properties {
         internal static System.Drawing.Bitmap Results_Panel {
             get {
                 object obj = ResourceManager.GetObject("Results_Panel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ResultsScene {
+            get {
+                object obj = ResourceManager.GetObject("ResultsScene", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
