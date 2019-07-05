@@ -254,10 +254,10 @@ namespace Battle_Tank
 
         private void pbScores_Click(object sender, EventArgs e)
         {
-            string query = "SELECT UserName, Points FROM Users";
-            string queryPoints = "SELECT Points FROM Users";
+            string query = "SELECT UserName, Points FROM Users ORDER BY Points DESC";
+            //string queryPoints = "SELECT Points FROM Users";
             string result = "";
-            string resultPoints = "";
+            //string resultPoints = "";
             using (connection = new SqlConnection(connectionString))
             using (SqlCommand command1 = new SqlCommand(query, connection))
             {
@@ -269,7 +269,7 @@ namespace Battle_Tank
                     //MessageBox.Show(result);
                     while (reader.Read())
                     {
-                        Console.WriteLine("\t{0}\t{1}", reader.GetString(0), reader.GetInt32(1));
+                        //Console.WriteLine("\t{0}\t{1}", reader.GetString(0), reader.GetInt32(1));
                         result += reader.GetString(0) + "             " + reader.GetInt32(1) + "\n";
                     }
                 }
