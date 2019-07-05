@@ -41,9 +41,10 @@
             // newGamebtn
             // 
             this.newGamebtn.Image = global::Battle_Tank.Properties.Resources.newGameBtn;
-            this.newGamebtn.Location = new System.Drawing.Point(278, 514);
+            this.newGamebtn.Location = new System.Drawing.Point(208, 418);
+            this.newGamebtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.newGamebtn.Name = "newGamebtn";
-            this.newGamebtn.Size = new System.Drawing.Size(173, 72);
+            this.newGamebtn.Size = new System.Drawing.Size(130, 58);
             this.newGamebtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.newGamebtn.TabIndex = 0;
             this.newGamebtn.TabStop = false;
@@ -54,9 +55,10 @@
             // exitBtn
             // 
             this.exitBtn.Image = global::Battle_Tank.Properties.Resources.ExitBtn;
-            this.exitBtn.Location = new System.Drawing.Point(526, 514);
+            this.exitBtn.Location = new System.Drawing.Point(394, 418);
+            this.exitBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(170, 67);
+            this.exitBtn.Size = new System.Drawing.Size(128, 54);
             this.exitBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.exitBtn.TabIndex = 1;
             this.exitBtn.TabStop = false;
@@ -68,11 +70,12 @@
             // 
             this.lblScore1.AutoSize = true;
             this.lblScore1.BackColor = System.Drawing.Color.Transparent;
-            this.lblScore1.Font = new System.Drawing.Font("PosterBodoni BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblScore1.Location = new System.Drawing.Point(350, 420);
+            this.lblScore1.Location = new System.Drawing.Point(262, 341);
+            this.lblScore1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblScore1.Name = "lblScore1";
-            this.lblScore1.Size = new System.Drawing.Size(95, 24);
+            this.lblScore1.Size = new System.Drawing.Size(70, 20);
             this.lblScore1.TabIndex = 2;
             this.lblScore1.Text = "SCORE:";
             // 
@@ -80,11 +83,12 @@
             // 
             this.lblScore2.AutoSize = true;
             this.lblScore2.BackColor = System.Drawing.Color.Transparent;
-            this.lblScore2.Font = new System.Drawing.Font("PosterBodoni BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblScore2.Location = new System.Drawing.Point(513, 420);
+            this.lblScore2.Location = new System.Drawing.Point(385, 341);
+            this.lblScore2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblScore2.Name = "lblScore2";
-            this.lblScore2.Size = new System.Drawing.Size(95, 24);
+            this.lblScore2.Size = new System.Drawing.Size(70, 20);
             this.lblScore2.TabIndex = 3;
             this.lblScore2.Text = "SCORE:";
             // 
@@ -92,11 +96,12 @@
             // 
             this.looserScore.AutoSize = true;
             this.looserScore.BackColor = System.Drawing.Color.Transparent;
-            this.looserScore.Font = new System.Drawing.Font("PosterBodoni BT", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.looserScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.looserScore.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.looserScore.Location = new System.Drawing.Point(442, 420);
+            this.looserScore.Location = new System.Drawing.Point(332, 341);
+            this.looserScore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.looserScore.Name = "looserScore";
-            this.looserScore.Size = new System.Drawing.Size(46, 24);
+            this.looserScore.Size = new System.Drawing.Size(32, 20);
             this.looserScore.TabIndex = 4;
             this.looserScore.Text = "Pts";
             // 
@@ -104,27 +109,29 @@
             // 
             this.winnerScore.AutoSize = true;
             this.winnerScore.BackColor = System.Drawing.Color.Transparent;
-            this.winnerScore.Font = new System.Drawing.Font("PosterBodoni BT", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.winnerScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.winnerScore.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.winnerScore.Location = new System.Drawing.Point(605, 420);
+            this.winnerScore.Location = new System.Drawing.Point(454, 341);
+            this.winnerScore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.winnerScore.Name = "winnerScore";
-            this.winnerScore.Size = new System.Drawing.Size(46, 24);
+            this.winnerScore.Size = new System.Drawing.Size(32, 20);
             this.winnerScore.TabIndex = 5;
             this.winnerScore.Text = "Pts";
             // 
             // ResultsScene
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Battle_Tank.Properties.Resources.ResultsScene;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(991, 638);
+            this.ClientSize = new System.Drawing.Size(743, 518);
             this.Controls.Add(this.winnerScore);
             this.Controls.Add(this.looserScore);
             this.Controls.Add(this.lblScore2);
             this.Controls.Add(this.lblScore1);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.newGamebtn);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ResultsScene";
             this.Text = "ResultsScene";
             this.Load += new System.EventHandler(this.ResultsScene_Load);

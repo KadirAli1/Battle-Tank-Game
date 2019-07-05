@@ -89,7 +89,7 @@ namespace Battle_Tank
             SceneNumber = 0;
 
             gameOver = false;
-            totalGamesPlayed = 1;
+            totalGamesPlayed = 11;
             clock2Started = false;
             Initialize_Timer();
         }
@@ -137,6 +137,7 @@ namespace Battle_Tank
                     if(NewGame.Player1.Points == totalGamesPlayed || NewGame.Player2.Points == totalGamesPlayed)
                     {
                         gameOver = true;
+                        this.Controls.Clear();
                         Invalidate();
                         //Clock2.Start();
                     }
@@ -190,8 +191,6 @@ namespace Battle_Tank
             Color color = NewGame.ActualScene.BackgroundColor;
             g.Clear(color);
             Pen pen = new Pen(color, 1);
-
-            
 
             if (gameOver)
             {
@@ -310,25 +309,27 @@ namespace Battle_Tank
                 Controls.Add(background);
                 MainScene.updateScores(NewGame.Player1.Name, NewGame.Player2.Name, NewGame.Player1.Points, NewGame.Player2.Points);
             }
-
-            //g.DrawEllipse(pen, new Rectangle(new Point(100, 100), new Size(200, 300)));
-            NewGame.DrawScene(pen, g, this);
-
-            foreach (Bullet bullet in Bullets)
+            else
             {
-                bullet.Draw(g);
-            }
+                //g.DrawEllipse(pen, new Rectangle(new Point(100, 100), new Size(200, 300)));
+                NewGame.DrawScene(pen, g, this);
 
-            for (int i = Bullets.Count - 1; i >= 0; --i)
-            {
-                if (Bullets[i].BulletTime > 5000)
+                foreach (Bullet bullet in Bullets)
                 {
-                    Bullets.RemoveAt(i);
+                    bullet.Draw(g);
                 }
+
+                for (int i = Bullets.Count - 1; i >= 0; --i)
+                {
+                    if (Bullets[i].BulletTime > 5000)
+                    {
+                        Bullets.RemoveAt(i);
+                    }
+                }
+
+                
             }
- 
             pen.Dispose();
-            
         }
 
 
