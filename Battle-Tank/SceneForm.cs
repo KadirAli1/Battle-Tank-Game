@@ -42,18 +42,42 @@ namespace Battle_Tank
         private bool gameOver;
         private int totalGamesPlayed;
 
+
+
+        // LAST SCENE
+        PictureBox background;
+        PictureBox newGamebtn;
+        PictureBox exitGamebtn;
+        Label score1;
+        Label score2;
+        Label scoreFirstPlayer;
+        Label scoreSecondPlayer;
+        Timer Clock2;
+        int backgroundWidth;
+        int backgroundHeight;
+        int fixedLocationX;
+        int fixedLocationY;
+        int locationX;
+        int locationY;
+        bool clock2Started;
+
         public SceneForm(string Player1Name, string Player2Name)
         {
             InitializeComponent();
+            DoubleBuffered = true;
+            StartTheGame(Player1Name, Player2Name);
+        }
+
+        private void StartTheGame(string Player1Name, string Player2Name)
+        {
             //FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             //WindowState = FormWindowState.Maximized;
             //label1.Text = this.Width + " " + this.Height;
+            Controls.Clear();
             this.WindowState = FormWindowState.Maximized;
             NewGame = new NewGame(this.Width, this.Height, Player1Name, Player2Name);
             Bullets = new List<Bullet>();
-            DoubleBuffered = true;
-            Initialize_Timer();
-
+        
             MClicked = false;
             QClicked = false;
             MTime = 0;
@@ -66,6 +90,8 @@ namespace Battle_Tank
 
             gameOver = false;
             totalGamesPlayed = 1;
+            clock2Started = false;
+            Initialize_Timer();
         }
 
         void Initialize_Timer()
@@ -112,6 +138,7 @@ namespace Battle_Tank
                     {
                         gameOver = true;
                         Invalidate();
+                        //Clock2.Start();
                     }
                     else
                     {
@@ -135,7 +162,7 @@ namespace Battle_Tank
                 if (MClicked)
                 {
                     MTime += 15;
-                    if (MTime > 350)
+                    if (MTime > 200)
                     {
                         MClicked = false;
                         MTime = 0;
@@ -145,7 +172,7 @@ namespace Battle_Tank
                 if (QClicked)
                 {
                     QTime += 15;
-                    if (QTime > 350)
+                    if (QTime > 200)
                     {
                         QClicked = false;
                         QTime = 0;
@@ -164,6 +191,126 @@ namespace Battle_Tank
             g.Clear(color);
             Pen pen = new Pen(color, 1);
 
+            
+
+            if (gameOver)
+            {
+                Clock.Stop();
+                //string message = NewGame.Player1.Name + "\t" + NewGame.Player2.Name + "\n" +
+                //    "Score: " + NewGame.Player1.Points + "\tScore: " + NewGame.Player2.Points + "\n\n\n" +
+                //    "Winner is: " + (NewGame.Player1.Points > NewGame.Player2.Points ? NewGame.Player1.Name : NewGame.Player2.Name);
+
+                
+
+                //MessageBox.Show(message);
+
+                //this.Hide();
+                //ResultsScene rs = new ResultsScene();
+
+                //rs.ShowDialog();
+                //this.Close();
+
+
+
+                //BACKGROUND
+
+                background.Size = new Size(backgroundWidth, backgroundHeight);
+
+                background.Location = new Point(locationX, locationY);
+                //background.Image = Resources.BrownTankWinner;
+                background.SizeMode = PictureBoxSizeMode.StretchImage;
+                background.BorderStyle = BorderStyle.Fixed3D;
+
+
+                int newExitGameWidth = 130;
+                int newExitGameHeight = 60;
+
+                // NEW GAME
+                int left = 180;
+                int top = 393;
+
+                newGamebtn.Size = new Size(newExitGameWidth, newExitGameHeight);
+                newGamebtn.Location = new Point(left, top + 3);
+                newGamebtn.Image = Resources.newGameBtn;
+                newGamebtn.SizeMode = PictureBoxSizeMode.StretchImage;
+                background.Controls.Add(newGamebtn);
+                newGamebtn.BackColor = Color.Transparent;
+                newGamebtn.Click += new EventHandler(newGamebtn_Click);
+                newGamebtn.MouseEnter += new EventHandler(newGamebtn_MouseEnter);
+                newGamebtn.MouseLeave += new EventHandler(newGamebtn_MouseLeave);
+
+                //EXIT GAME
+
+                exitGamebtn.Size = new Size(newExitGameWidth, newExitGameHeight - 3);
+                exitGamebtn.Location = new Point(left + 200, top);
+                exitGamebtn.Image = Resources.ExitBtn;
+                exitGamebtn.SizeMode = PictureBoxSizeMode.StretchImage;
+                background.Controls.Add(exitGamebtn);
+                exitGamebtn.BackColor = Color.Transparent;
+                exitGamebtn.Click += new EventHandler(exitGamebtn_Click);
+                exitGamebtn.MouseEnter += new EventHandler(exitGamebtn_MouseEnter);
+                exitGamebtn.MouseLeave += new EventHandler(exitGamebtn_MouseLeave);
+
+
+
+                int ScoreX = left + 60;
+                int ScoreY = top - 60;
+                // LABEL SCORE
+
+                score1.Text = "SCORE:";
+                score1.BackColor = Color.Transparent;
+                score1.Font = new Font("Microsoft Sans Serif", 12);
+                score1.ForeColor = Color.White;
+                score1.Location = new Point(ScoreX, ScoreY);
+                score1.Size = new Size(70, 20);
+                background.Controls.Add(score1);
+
+
+
+                score2.Text = "SCORE:";
+                score2.BackColor = Color.Transparent;
+                score2.Font = new Font("Microsoft Sans Serif", 12);
+                score2.ForeColor = Color.White;
+                score2.Location = new Point(ScoreX + 110, ScoreY);
+                score2.Size = new Size(70, 20);
+                background.Controls.Add(score2);
+
+
+
+                scoreFirstPlayer.Text = NewGame.Player1.Points.ToString();
+                scoreFirstPlayer.BackColor = Color.Transparent;
+                scoreFirstPlayer.Font = new Font("Microsoft Sans Serif", 12);
+                scoreFirstPlayer.ForeColor = Color.White;
+                background.Controls.Add(scoreFirstPlayer);
+                scoreFirstPlayer.Location = new Point(ScoreX + 70, ScoreY);
+
+
+                scoreSecondPlayer.Text = "Pts";
+                scoreSecondPlayer.BackColor = Color.Transparent;
+                scoreSecondPlayer.Font = new Font("Microsoft Sans Serif", 12);
+                scoreSecondPlayer.ForeColor = Color.White;
+                background.Controls.Add(scoreSecondPlayer);
+                scoreSecondPlayer.Location = new Point(ScoreX + 110 + 70, ScoreY);
+
+                if (NewGame.Player1.Points > NewGame.Player2.Points)
+                {
+                    //this.BackgroundImage = Resources.GreenTankWinner;
+                    background.Image = Resources.GreenTankWinner;
+                    scoreFirstPlayer.Text = NewGame.Player2.Points.ToString();
+                    scoreSecondPlayer.Text = NewGame.Player1.Points.ToString();
+                }
+                else
+                {
+                    //this.BackgroundImage = Resources.BrownTankWinner;
+                    background.Image = Resources.BrownTankWinner;
+                    scoreSecondPlayer.Text = NewGame.Player2.Points.ToString();
+                    scoreFirstPlayer.Text = NewGame.Player1.Points.ToString();
+                }
+
+                Controls.Add(background);
+                //MainScene.updateScores(NewGame.Player1.Name, NewGame.Player2.Name, NewGame.Player1.Points, NewGame.Player2.Points);
+            }
+
             //g.DrawEllipse(pen, new Rectangle(new Point(100, 100), new Size(200, 300)));
             NewGame.DrawScene(pen, g, this);
 
@@ -172,31 +319,16 @@ namespace Battle_Tank
                 bullet.Draw(g);
             }
 
-            for(int i = Bullets.Count - 1; i >= 0; --i)
+            for (int i = Bullets.Count - 1; i >= 0; --i)
             {
-                if(Bullets[i].BulletTime > 5000)
+                if (Bullets[i].BulletTime > 5000)
                 {
                     Bullets.RemoveAt(i);
                 }
             }
+ 
             pen.Dispose();
-            if (gameOver)
-            {
-                Clock.Stop();
-                string message = NewGame.Player1.Name + "\t" + NewGame.Player2.Name + "\n" +
-                    "Score: " + NewGame.Player1.Points + "\tScore: " + NewGame.Player2.Points + "\n\n\n" +
-                    "Winner is: " + (NewGame.Player1.Points > NewGame.Player2.Points ? NewGame.Player1.Name : NewGame.Player2.Name);
-
-                MainScene.updateScores(NewGame.Player1.Name, NewGame.Player2.Name, NewGame.Player1.Points, NewGame.Player2.Points);
-
-                MessageBox.Show(message);
-                
-                //this.Hide();
-                //ResultsScene rs = new ResultsScene();
-
-                //rs.ShowDialog();
-                //this.Close();
-            }
+            
         }
 
 
@@ -351,6 +483,91 @@ namespace Battle_Tank
                 bullet.Move(scene);
             }
             Invalidate();
+        }
+
+        private void SceneForm_Load_1(object sender, EventArgs e)
+        {
+            backgroundWidth = 700;
+            backgroundHeight = 500;
+
+
+
+            fixedLocationX = (this.Width - backgroundWidth) / 2;
+            fixedLocationY = (this.Height - backgroundHeight) / 2;
+
+            locationX = fixedLocationX;
+            locationY = fixedLocationY;
+
+            background = new PictureBox();
+            newGamebtn = new PictureBox();
+            exitGamebtn = new PictureBox();
+            score1 = new Label();
+            score2 = new Label();
+            scoreFirstPlayer = new Label();
+            scoreSecondPlayer = new Label();
+
+            //label1.Text = Width + " " + Height + "\n" +
+            //    locationX + " " + locationY + "\n" +
+            //    fixedLocationX + " " + fixedLocationX + "\n";
+
+            Clock2 = new Timer();
+            Clock2.Interval = 1;
+            Clock2.Tick += new EventHandler(Clock2_Tick);
+            //Clock2.Start();
+        }
+
+        private void Clock2_Tick(object sender, EventArgs e)
+        {
+            if (locationY < fixedLocationY)
+            {
+                Clock2.Stop();
+            }
+            else
+            {
+                locationY -= 20;
+            }
+            Invalidate(true);
+        }
+
+
+        private void newGamebtn_MouseEnter(object sender, EventArgs e)
+        {
+            newGamebtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            newGamebtn.Cursor = Cursors.Hand;
+        }
+
+        private void newGamebtn_MouseLeave(object sender, EventArgs e)
+        {
+            newGamebtn.SizeMode = PictureBoxSizeMode.Zoom;
+            newGamebtn.Cursor = Cursors.Default;
+        }
+
+        private void exitGamebtn_MouseEnter(object sender, EventArgs e)
+        {
+            exitGamebtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            exitGamebtn.Cursor = Cursors.Hand;
+        }
+
+        private void exitGamebtn_MouseLeave(object sender, EventArgs e)
+        {
+            exitGamebtn.SizeMode = PictureBoxSizeMode.Zoom;
+            exitGamebtn.Cursor = Cursors.Default;
+        }
+
+        public void checkWinner()
+        {
+            
+        }
+
+        private void newGamebtn_Click(object sender, EventArgs e)
+        {
+            StartTheGame(NewGame.Player1.Name, NewGame.Player2.Name);
+            Invalidate();
+        }
+
+        private void exitGamebtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

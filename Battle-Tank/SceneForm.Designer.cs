@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "SceneForm";
             this.Text = "SceneForm";
+            this.Load += new System.EventHandler(this.SceneForm_Load_1);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.SceneForm_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SceneForm_KeyDown);
             this.ResumeLayout(false);

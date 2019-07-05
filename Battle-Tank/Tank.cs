@@ -248,7 +248,7 @@ namespace Battle_Tank
             {
                 foreach (Bullet bullet in SceneForm.Bullets)
                 {
-                    if (bullet.BeginningTime > 5)
+                    if (bullet.BeginningTime > 10)
                     {
                         if (bullet.Center.X > X && bullet.Center.X < X + Width
                             && bullet.Center.Y > Y && bullet.Center.Y < Y + Height)
