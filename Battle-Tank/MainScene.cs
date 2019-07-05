@@ -279,26 +279,51 @@ namespace Battle_Tank
 
         public static void updateScores(String player1Username, String player2Username, int player1Points, int player2Points)
         {
-            string query = "UPDATE Users" +
-                "SET Points = @PointsUpdated" +
-                "WHERE UserName = @UserName";
+            MessageBox.Show("PLAYER 1: " + player1Points.ToString());
+            MessageBox.Show("PLAYER 2: " + player2Points.ToString());
+            string query = "UPDATE Users SET Points = @PointsUpdated WHERE UserName = @UserName";
+
+            string queryPlayer1Points = "SELECT Points FROM Users WHERE UserName = @UserNamePlayer1";
+            string queryPlayer2Points = "SELECT Points FROM Users WHERE UserName = @UserNamePlayer2";
+
+            int pl1Points;
+            int pl2Points;
+
+            using (LoginForm.connection = new SqlConnection(LoginForm.connectionString))
+            using (SqlCommand command1 = new SqlCommand(queryPlayer1Points, LoginForm.connection))
+            {
+                LoginForm.connection.Open();
+                command1.Parameters.AddWithValue("@UserNamePlayer1", player1Username);
+                pl1Points = (int)command1.ExecuteScalar();
+                MessageBox.Show(pl1Points.ToString());
+            }
+
+            using (LoginForm.connection = new SqlConnection(LoginForm.connectionString))
+            using (SqlCommand command1 = new SqlCommand(queryPlayer2Points, LoginForm.connection))
+            {
+                LoginForm.connection.Open();
+                command1.Parameters.AddWithValue("@UserNamePlayer2", player2Username);
+                pl2Points = (int)command1.ExecuteScalar();
+                MessageBox.Show(pl2Points.ToString());
+            }
 
             using (LoginForm.connection = new SqlConnection(LoginForm.connectionString))
             using (SqlCommand command1 = new SqlCommand(query, LoginForm.connection))
             {
                 LoginForm.connection.Open();
                 command1.Parameters.AddWithValue("@UserName", player1Username);
-                command1.Parameters.AddWithValue("PointsUpdated", player1Points);
+                command1.Parameters.AddWithValue("@PointsUpdated", pl1Points += player1Points);
 
-                command1.ExecuteScalar();
+                command1.ExecuteNonQuery();
             }
+            using (LoginForm.connection = new SqlConnection(LoginForm.connectionString))
             using (SqlCommand command2 = new SqlCommand(query, LoginForm.connection))
             {
                 LoginForm.connection.Open();
                 command2.Parameters.AddWithValue("@UserName", player2Username);
-                command2.Parameters.AddWithValue("PointsUpdated", player2Points);
+                command2.Parameters.AddWithValue("@PointsUpdated", pl2Points += player2Points);
 
-                command2.ExecuteScalar();
+                command2.ExecuteNonQuery();
             }
         }
 
