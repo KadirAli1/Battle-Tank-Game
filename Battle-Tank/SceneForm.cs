@@ -308,7 +308,7 @@ namespace Battle_Tank
                 }
 
                 Controls.Add(background);
-                //MainScene.updateScores(NewGame.Player1.Name, NewGame.Player2.Name, NewGame.Player1.Points, NewGame.Player2.Points);
+                MainScene.updateScores(NewGame.Player1.Name, NewGame.Player2.Name, NewGame.Player1.Points, NewGame.Player2.Points);
             }
 
             //g.DrawEllipse(pen, new Rectangle(new Point(100, 100), new Size(200, 300)));
