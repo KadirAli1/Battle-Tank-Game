@@ -47,6 +47,8 @@
             this.newGamebtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.newGamebtn.TabIndex = 0;
             this.newGamebtn.TabStop = false;
+            this.newGamebtn.MouseEnter += new System.EventHandler(this.newGamebtn_MouseEnter);
+            this.newGamebtn.MouseLeave += new System.EventHandler(this.newGamebtn_MouseLeave);
             // 
             // exitBtn
             // 
@@ -57,6 +59,8 @@
             this.exitBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.exitBtn.TabIndex = 1;
             this.exitBtn.TabStop = false;
+            this.exitBtn.MouseEnter += new System.EventHandler(this.exitBtn_MouseEnter);
+            this.exitBtn.MouseLeave += new System.EventHandler(this.exitBtn_MouseLeave);
             // 
             // lblScore1
             // 

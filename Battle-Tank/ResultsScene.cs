@@ -52,5 +52,29 @@ namespace Battle_Tank
             winnerScore.Dock = DockStyle.Top;
             winnerScore.Anchor = AnchorStyles.Top;
         }
+
+        private void newGamebtn_MouseEnter(object sender, EventArgs e)
+        {
+            newGamebtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            newGamebtn.Cursor = Cursors.Hand;
+        }
+
+        private void newGamebtn_MouseLeave(object sender, EventArgs e)
+        {
+            newGamebtn.SizeMode = PictureBoxSizeMode.Zoom;
+            newGamebtn.Cursor = Cursors.Default;
+        }
+
+        private void exitBtn_MouseEnter(object sender, EventArgs e)
+        {
+            exitBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            exitBtn.Cursor = Cursors.Hand;
+        }
+
+        private void exitBtn_MouseLeave(object sender, EventArgs e)
+        {
+            exitBtn.SizeMode = PictureBoxSizeMode.Zoom;
+            exitBtn.Cursor = Cursors.Default;
+        }
     }
 }
