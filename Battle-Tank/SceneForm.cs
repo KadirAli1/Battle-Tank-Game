@@ -65,7 +65,7 @@ namespace Battle_Tank
             SceneNumber = 0;
 
             gameOver = false;
-            totalGamesPlayed = 3;
+            totalGamesPlayed = 1;
         }
 
         void Initialize_Timer()
@@ -108,7 +108,7 @@ namespace Battle_Tank
                 nextGameTime += 15;
                 if(nextGameTime > 3000)
                 {
-                    if(NewGame.Player1Points == totalGamesPlayed || NewGame.Player2Points == totalGamesPlayed)
+                    if(NewGame.Player1.Points == totalGamesPlayed || NewGame.Player2.Points == totalGamesPlayed)
                     {
                         gameOver = true;
                         Invalidate();
@@ -183,16 +183,19 @@ namespace Battle_Tank
             if (gameOver)
             {
                 Clock.Stop();
-                /*string message = NewGame.Player1.Name + "\t" + NewGame.Player2.Name + "\n" +
-                    "Score: " + NewGame.Player1Points + "\tScore: " + NewGame.Player2Points + "\n\n\n" +
-                    "Winner is: " + (NewGame.Player1Points > NewGame.Player2Points ? NewGame.Player1.Name : NewGame.Player2.Name);
+                string message = NewGame.Player1.Name + "\t" + NewGame.Player2.Name + "\n" +
+                    "Score: " + NewGame.Player1.Points + "\tScore: " + NewGame.Player2.Points + "\n\n\n" +
+                    "Winner is: " + (NewGame.Player1.Points > NewGame.Player2.Points ? NewGame.Player1.Name : NewGame.Player2.Name);
 
-                MessageBox.Show(message);*/
-                this.Hide();
-                ResultsScene rs = new ResultsScene();
+                MainScene.updateScores(NewGame.Player1.Name, NewGame.Player2.Name, NewGame.Player1.Points, NewGame.Player2.Points);
 
-                rs.ShowDialog();
-                this.Close();
+                MessageBox.Show(message);
+                
+                //this.Hide();
+                //ResultsScene rs = new ResultsScene();
+
+                //rs.ShowDialog();
+                //this.Close();
             }
         }
 
@@ -324,7 +327,7 @@ namespace Battle_Tank
             {
                 if (!nextGame)
                 {
-                    NewGame.Player2Points++;
+                    NewGame.Player2.Points++;
                     Bullets.Clear();
                     nextGame = true;
                 }
@@ -337,7 +340,7 @@ namespace Battle_Tank
             {
                 if (!nextGame)
                 {
-                    NewGame.Player1Points++;
+                    NewGame.Player1.Points++;
                     Bullets.Clear();
                     nextGame = true;
                 }

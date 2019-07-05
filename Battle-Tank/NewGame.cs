@@ -15,8 +15,8 @@ namespace Battle_Tank
         public Scene ActualScene { get; set; }
         public static Player Player1 { get; set; }
         public static Player Player2 { get; set; }
-        public static int Player1Points { get; set; }
-        public static int Player2Points { get; set; }
+        //public static int Player1Points { get; set; }
+        //public static int Player2Points { get; set; }
         public NewGame(int Width, int Height, string Player1Name, string Player2Name)
         {
             this.Width = Width;
@@ -25,8 +25,8 @@ namespace Battle_Tank
             GenerateScene(0);
             Player1 = new Player(Player1Name, Tank.Position.LeftToRight);
             Player2 = new Player(Player2Name, Tank.Position.RightToLeft);
-            Player1Points = 0;
-            Player2Points = 0;
+            //Player1Points = 0;
+            //Player2Points = 0;
         }
 
 

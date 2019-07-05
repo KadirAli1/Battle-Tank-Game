@@ -85,17 +85,17 @@ namespace Battle_Tank
 
         public void checkWinner()
         {
-            if (NewGame.Player1Points > NewGame.Player2Points)
+            if (NewGame.Player1.Points > NewGame.Player2.Points)
             {
                 this.BackgroundImage = Resources.GreenTankWinner;
-                winnerScore.Text = NewGame.Player1Points.ToString();
-                looserScore.Text = NewGame.Player2Points.ToString();
+                winnerScore.Text = NewGame.Player1.Points.ToString();
+                looserScore.Text = NewGame.Player2.Points.ToString();
             }
             else
             {
                 this.BackgroundImage = Resources.BrownTankWinner;
-                winnerScore.Text = NewGame.Player2Points.ToString();
-                looserScore.Text = NewGame.Player1Points.ToString();
+                winnerScore.Text = NewGame.Player2.Points.ToString();
+                looserScore.Text = NewGame.Player1.Points.ToString();
             }
         }
 

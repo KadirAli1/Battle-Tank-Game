@@ -22,6 +22,7 @@ namespace Battle_Tank
             RefreshTanks(Position);
             //Points = 0;
             IsPlayerBurned = false;
+            Points = 0;
         }
 
         public void RefreshTanks(Tank.Position Position)
@@ -34,6 +35,7 @@ namespace Battle_Tank
             {
                 Tank = new Tank(Scene.RIGHT - 50, Scene.BOTTOM - 50, 180, Position);
             }
+
         }
 
         public void Draw(Graphics g)
