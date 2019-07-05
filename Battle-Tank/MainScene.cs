@@ -278,8 +278,8 @@ namespace Battle_Tank
                     MetroFramework.MetroMessageBox.Show(this,"IT DOES NOT");
                 }
             }
-            MessageBox.Show(result);
-            //MetroFramework.MetroMessageBox.Show(this, result, "SCORES");
+            //MessageBox.Show(result);
+            MetroFramework.MetroMessageBox.Show(this, result, "TOP 5 PLAYERS", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, 180);
         }
 
         public static void updateScores(String player1Username, String player2Username, int player1Points, int player2Points)
