@@ -29,7 +29,7 @@ When the tank is hit by the bullet, the tank is destroyed as shown in the next p
 
 At the moment when the tank breakdown occurs, in the relevant fields for the presentation of the tank (name and points) automatically generates a point for the winning tank, and then the game continues to the next level.
 
-#### Results Scene
+### Results Scene
 In the end, after the game is over, we can see the results scene as follows:
 If the winning player is green tank it has been emphasized as in the photo:
 
