@@ -4,6 +4,7 @@
 ## Development
 *Battle Tank* is developed by 4 computer science students. It is 
 completed on 05.07.2019 and ready to play. 
+** Loading Battle-Tank**
 
 ## Gameplay
 Initially, the application starts with a form in which the user will be able to log in, play, see the best players of the game and also the manual in which the users will be shown a screen on how to play the game (which buttons to press).
