@@ -31,11 +31,11 @@ At the moment when the tank breakdown occurs, in the relevant fields for the pre
 
 #### Results Scene
 In the end, after the game is over, we can see the results scene as follows:
-If the winning team is green tank it has been emphasized as in the photo:
+If the winning player is green tank it has been emphasized as in the photo:
 
 ![GreenTank](https://github.com/KadirAli1/Battle-Tank-Game/blob/master/Screenshots/GreenTankWinner.png)
 
-The same applies to the case when the winner team is brown tank
+The same applies to the case when the winner player is brown tank
 ![BrownTank](https://github.com/KadirAli1/Battle-Tank-Game/blob/master/Screenshots/BrownTankWinner.png)
 
 
