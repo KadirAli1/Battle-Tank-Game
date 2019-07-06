@@ -9,8 +9,11 @@ completed on 05.07.2019 and ready to play.
 After filling the loadig panel, begins the second scene which is the main scene
 ![LoadingScene](https://github.com/KadirAli1/Battle-Tank-Game/blob/master/Screenshots/LoadingScene.png)
 
-**Main scene** is scene which shows all the possible buttons to start the game, such as Play, Keys, Login, Scores, sound off and sound on.
+**Main scene** is a scene which shows all the possible buttons to start the game, such as Play, Keys, Login, Scores, sound off and sound on.
 ![MainScene](https://github.com/KadirAli1/Battle-Tank-Game/blob/master/Screenshots/MainScene.png)
+
+**Keys scene** is a scene that tells us with what signs the game can play, for player 1 and player 2.
+![KeysScene](https://github.com/KadirAli1/Battle-Tank-Game/blob/master/Screenshots/KeysScene.png)
 ## Gameplay
 Initially, the application starts with a form in which the user will be able to log in, play, see the best players of the game and also the manual in which the users will be shown a screen on how to play the game (which buttons to press).
 
