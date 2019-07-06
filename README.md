@@ -24,7 +24,17 @@ Battle starts immediately when the game launches. Initially, two players are giv
 
 One thing that makes the game more interesting is that the tank can be destroyed by his own rocket. The players need to be careful not to shoot as much as they want, since they can get destroyed by their own rockets.
 
-### Tank Features
+
+The main idea of the **`btnRegister_Click`** function is to search through the database and see if there is a user with the same name as the one the user just set on the log-in form. If there is any, the message will be shown that the user with that name already exists, so the user will have to enter a different username. If not, new entry will be added into the database with their respective credentials and with 0 points initially. 
+
+The **`btnLogin_Click`** is more complicated. Here, we look through the database and we make sure that the user with those credentials he just entered exists on the database so he will be logged in successfully. The game won't be accessible to play if there are not two users that are logged in. After two successfully logins, the game is ready to play with pressing the `ENTER` or `SPACE` button. With pressing one of these, the game will start with those two respective players.
+
+**vazhdo ktu kujt I perket .. mvarsisht pi rrjedhjes lojes** 
+
+In this function I get the two users and their respective points as arguments, and after that I had to search the database to find those two players and their points. After the game is finished, I update their points by adding the existing points and the new points they just earned while playing. Before that, I make sure that the game is played only with registered users. 
+they are not, I just **`return`** and don't open the database for further changes.
+
+## Tank Features
 
 One another important feature or something that is characteristic for this tank its that it can rotate in 360 degrees, to the left and right. Tank also moves forward and backward.
 Its important to mention that turret also enables us to run the tank by moving it forward  and backward.
@@ -38,17 +48,6 @@ When the tank is hit by the bullet, the tank is destroyed as shown in the next p
 
 At the moment when the tank breakdown occurs, in the relevant fields for the presentation of the tank (name and points) automatically generates a point for the winning tank, and then the game continues to the next level.
 
-
-
-
-The main idea of the **`btnRegister_Click`** function is to search through the database and see if there is a user with the same name as the one the user just set on the log-in form. If there is any, the message will be shown that the user with that name already exists, so the user will have to enter a different username. If not, new entry will be added into the database with their respective credentials and with 0 points initially. 
-
-The **`btnLogin_Click`** is more complicated. Here, we look through the database and we make sure that the user with those credentials he just entered exists on the database so he will be logged in successfully. The game won't be accessible to play if there are not two users that are logged in. After two successfully logins, the game is ready to play with pressing the `ENTER` or `SPACE` button. With pressing one of these, the game will start with those two respective players.
-
-**vazhdo ktu kujt I perket .. mvarsisht pi rrjedhjes lojes** 
-
-In this function I get the two users and their respective points as arguments, and after that I had to search the database to find those two players and their points. After the game is finished, I update their points by adding the existing points and the new points they just earned while playing. Before that, I make sure that the game is played only with registered users. 
-they are not, I just **`return`** and don't open the database for further changes.
 
 ### Results Scene
 In the end, after the game is over, we can see the results scene as follows:
