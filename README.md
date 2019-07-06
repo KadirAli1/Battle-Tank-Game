@@ -131,7 +131,7 @@ class Scene{
 } 
 ```
 
-Then, we have defined 10 classes with the name SceneN, where N is a number from 1 to 10 that are derived from Scene class.
+Then, we have defined 10 classes with the name SceneN, where N is a number from 1 to 10, that are derived from Scene class.
 
 ```csharp
 class SceneN : Scene
