@@ -29,14 +29,6 @@ When the tank is hit by the bullet, the tank is destroyed as shown in the next p
 
 At the moment when the tank breakdown occurs, in the relevant fields for the presentation of the tank (name and points) automatically generates a point for the winning tank, and then the game continues to the next level.
 
-### Results Scene
-In the end, after the game is over, we can see the results scene as follows:
-If the winning player is green tank it has been emphasized as in the photo:
-
-![GreenTank](https://github.com/KadirAli1/Battle-Tank-Game/blob/master/Screenshots/GreenTankWinner.png)
-
-The same applies to the case when the winner player is brown tank
-![BrownTank](https://github.com/KadirAli1/Battle-Tank-Game/blob/master/Screenshots/BrownTankWinner.png)
 
 
 
@@ -48,4 +40,12 @@ The **`btnLogin_Click`** is more complicated. Here, we look through the database
 
 In this function I get the two users and their respective points as arguments, and after that I had to search the database to find those two players and their points. After the game is finished, I update their points by adding the existing points and the new points they just earned while playing. Before that, I make sure that the game is played only with registered users. In case they are not, I just **`return`** and don't open the database for further changes.
 
+### Results Scene
+In the end, after the game is over, we can see the results scene as follows:
+If the winning player is green tank it has been emphasized as in the photo:
+
+![GreenTank](https://github.com/KadirAli1/Battle-Tank-Game/blob/master/Screenshots/GreenTankWinner.png)
+
+The same applies to the case when the winner player is brown tank
+![BrownTank](https://github.com/KadirAli1/Battle-Tank-Game/blob/master/Screenshots/BrownTankWinner.png)
 
