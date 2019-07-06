@@ -15,7 +15,7 @@ Battle starts immediately when the game launches. Initially, two players are giv
 
 One thing that makes the game more interesting is that the tank can be destroyed by his own rocket. The players need to be careful not to shoot as much as they won't, since they can get destroyed by their own rockets.
 
-###Tank Features
+### Tank Features
 
 One another important feature or something that is characteristic for this tank its that it can rotate in 360 degrees, to the left and right. Tank also moves forward and backward.
 Its important to mention that turret also enables us to run the tank by moving it forward  and backward.
