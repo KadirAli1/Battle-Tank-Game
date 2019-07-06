@@ -9,11 +9,11 @@ completed on 05.07.2019 and ready to play.
 Initially, the application starts with a form in which the user will be able to log in, play, see the best players of the game and also the manual in which the users will be shown a screen on how to play the game (which buttons to press).
 
 The game begins with the users logging to their respective accounts.  Before they log in they have to be registered. The feature to log in the users will make the game more interesting since their points will be saved in a database.<br/>In case the players/users want their point to be saved for later plays, 
-both of the players need to log in, so the game can be played.The game can also be played without the need to register, but the points won't be saved.
+both of the players need to log in, so the game can be played. The game can also be played without the need to register, but the points won't be saved.
 
-Battle starts immediately when the game launches. Initially, two players are given a random position in the map, which is generated randomly from the pool of maps, and after that the players are positioned on random positions also. The map consists of some barriers in which the rockets that come out of the tank can not pass. Instead, they will bounce back and after some seconds they will disappear. Also, the tank is not allowed to go through the barriers, instead it needs to go back, since the wall will block it from moving.
+Battle starts immediately when the game launches. Initially, two players are given a random position in the map, which is generated randomly from the pool of maps, and after that the players are positioned on random positions also. The map consists of some barriers in which the rockets that come out of the tank can not pass. Instead, they will bounce back and after some seconds they will disappear. Also, the tank is not allowed to go through the barriers, instead it needs to go back, since the wall will block it from moving.
 
-One thing that makes the game more interesting is that the tank can be destroyed by his own rocket. The players need to be careful not to shoot as much as they won't, since they can get destroyed by their own rockets.
+One thing that makes the game more interesting is that the tank can be destroyed by his own rocket. The players need to be careful not to shoot as much as they want, since they can get destroyed by their own rockets.
 
 ### Tank Features
 
