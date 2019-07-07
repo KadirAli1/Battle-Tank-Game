@@ -131,10 +131,11 @@ namespace Battle_Tank
             //
             if (nextGame)
             {
+                Bullets.Clear();
                 nextGameTime += 15;
                 if(nextGameTime > 3000)
                 {
-                    if(NewGame.Player1.Points + NewGame.Player2.Points == totalGamesPlayed)
+                    if(NewGame.Player1.Points + NewGame.Player2.Points >= totalGamesPlayed)
                     {
                         gameOver = true;
                         this.Controls.Clear();
@@ -144,7 +145,6 @@ namespace Battle_Tank
                     else
                     {
                         this.Controls.Clear();
-                        nextGameTime = 0;
                         NewGame.Player1.Tank.IsTankBurned = false;
                         NewGame.Player1.Tank.IsTankBurned = false;
                         NewGame.Player1.Tank.Image = Resources.BrownTank;
@@ -155,7 +155,8 @@ namespace Battle_Tank
                         NewGame.Player2.RefreshTanks(Tank.Position.RightToLeft);
                         nextGame = false;
                     }
-                    
+                    nextGameTime = 0;
+
                 }
             }
             else
@@ -326,8 +327,6 @@ namespace Battle_Tank
                         Bullets.RemoveAt(i);
                     }
                 }
-
-                
             }
             pen.Dispose();
         }

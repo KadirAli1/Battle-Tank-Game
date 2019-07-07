@@ -75,23 +75,26 @@ namespace Battle_Tank
 
                 if (cY - Radius < bottom && cY - Radius > top && cX < right && cX > left)
                 {
+                    BeginningTime += 10;
                     Dy *= -1;
                   
                 }
                 if (cY + Radius < bottom && cY + Radius > top && cX < right && cX > left)
                 {
+                    BeginningTime += 10;
                     Dy *= -1;
                    
                 }
                 if(cX - Radius < right && cX - Radius > left && cY > top && cY < bottom)
                 {
+                    BeginningTime += 10;
                     Dx *= -1;
                   
                 }
                 if (cX + Radius > left && cX + Radius < right && cY > top && cY < bottom)
                 {
+                    BeginningTime += 10;
                     Dx *= -1;
-         
                 }
 
             }
